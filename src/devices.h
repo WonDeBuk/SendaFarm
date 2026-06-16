@@ -19,8 +19,6 @@ void setUpDHTSensor() {
 const int LED_PIN = 22;
 void setUpLED() {
    pinMode(LED_PIN, OUTPUT);
-   // TODO: ON / OFF with REDNODE
-   digitalWrite(LED_PIN, HIGH);
 }
 
 

@@ -3,19 +3,17 @@
 #include "lib.h"
 
 unsigned long lastMsg = 0;
-void Callback(char *Topic, byte *Payload, unsigned int Length);
+void callback(char *Topic, byte *Payload, unsigned int Length);
 
 void setup() {
    Serial.begin(115200);
    randomSeed(micros());
 
    if (DEBUGGING_MODE_IS_ON) showAvailableNetworks();
+
    connectWifi();
 
-   espClient.setInsecure();
-   client.setServer(MQTT_SERVER, PORT);
-   client.setCallback(Callback);
-
+   setUpMQTT();
    connectMQTT();
 
    setUpDHTSensor();
@@ -50,15 +48,6 @@ void loop() {
    /* BUTTON -> RELAY -> PUMP */
    digitalWrite(RELAY_PIN, digitalRead(WATER_PUMP_BUTTON_PIN));
 
-   delay(2000);
+   delay(1000);
 }
 
-void Callback(char *Topic, byte *Payload, unsigned int Length) {
-   Serial.print("Message arrived [");
-   Serial.print(Topic);
-   Serial.print("] ");
-   for (int i = 0; i < Length; i++) {
-      Serial.print((char)Payload[i]);
-   }
-   Serial.println();
-}

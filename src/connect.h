@@ -13,11 +13,13 @@ void connectWifi() {
    }
 
    WiFi.begin(SSID, PASSWORD);
+   delay(1000);
 
    while (WiFi.status() != WL_CONNECTED) {
       Serial.println("[WIFI] No Signal . . .");
-      delay(5000);
-      Serial.println("[WIFI] Reconnecting . . .");
+      Serial.println("[WIFI] Reconnecting . . .");         
+   
+      delay(500);
    }
 
    Serial.println("[WIFI] Connected");
@@ -49,6 +51,14 @@ const int PORT = 8883;
 WiFiClientSecure espClient;
 PubSubClient client(espClient);
 
+void callback(char *, byte *, unsigned int);
+
+void setUpMQTT() {
+   espClient.setInsecure();
+   client.setCallback(callback);
+   client.setServer(MQTT_SERVER, PORT);   
+}
+
 void connectMQTT() {
    String clientID = "ESP32-" + String(random(0xFFFF), HEX);
    const char *clientUserName = "Senda1";
@@ -56,16 +66,26 @@ void connectMQTT() {
 
    while (client.connected() != true) {
       if (client.connect(clientID.c_str(), clientUserName, clientPassword)) {
-         Serial.println("[MQTT] Connected");
-         client.publish("senda-farm/mqtt", "farm");
-         client.subscribe("senda-farm/mqtt");
+         client.subscribe("senda-farm/led");
       }
       else {
          Serial.println("[MQTT] No Signal . . .");
-         delay(5000);
          Serial.println("[MQTT] Reconnecting . . .");
+         delay(500);
       }
    }
 
    Serial.println("[MQTT] Connected");
+}
+
+void callback(char *Topic, byte *Payload, unsigned int Length) {
+   String msg = "";
+   for (int i = 0; i < Length; i++) msg += (char)Payload[i];
+
+   Serial.println("Topic: " + String(Topic));
+   Serial.println("Message: " + String(msg));
+
+   if (String(Topic) == "senda-farm/led" and msg == "true") 
+      if (digitalRead(LED_PIN)) digitalWrite(LED_PIN, LOW);
+      else digitalWrite(LED_PIN, HIGH);
 }

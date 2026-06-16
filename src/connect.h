@@ -67,6 +67,7 @@ void connectMQTT() {
    while (client.connected() != true) {
       if (client.connect(clientID.c_str(), clientUserName, clientPassword)) {
          client.subscribe("senda-farm/output/led");
+         client.subscribe("senda-farm/output/lcd");
       }
       else {
          Serial.println("[MQTT] No Signal . . .");
@@ -87,4 +88,9 @@ void callback(char *Topic, byte *Payload, unsigned int Length) {
 
    if (String(Topic) == "senda-farm/output/led" and msg == "true") digitalWrite(LED_PIN, 1);
    else if (msg == "false") digitalWrite(LED_PIN, 0);
+
+   if (String(Topic) == "senda-farm/output/lcd") {
+      // TODO: Doi Mode cua LCD 
+      Serial.println("LCD");
+   }
 }

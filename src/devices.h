@@ -39,11 +39,15 @@ void setUpLCD() {
 
    lcd.setCursor(0, 0);
    lcd.print("Hello, World!");
+   delay(500);
 }
 
 // Display Data
+String LCD_CACHED = "";
 void displayLCD(const String row1, const String row2) {
+   if (row1 + row2 == LCD_CACHED) return;
    lcd.clear();
+   LCD_CACHED = row1 + row2;
 
    lcd.setCursor(0, 0);
    lcd.print(row1);

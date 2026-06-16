@@ -2,818 +2,77 @@
     {
         "id": "sa_tab",
         "type": "tab",
-        "label": "🌿 Smart Agriculture IoT",
+        "label": "Senda Farm",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "t_weather",
-        "type": "ui-template",
+        "id": "0d07dbc9973e4c4a",
+        "type": "ui-gauge",
         "z": "sa_tab",
-        "group": "g_weather",
-        "page": "",
-        "ui": "",
-        "name": "WeatherCard",
+        "name": "Nhiệt độ",
+        "group": "17af2483ca06839b",
         "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap\" rel=\"stylesheet\">\n<link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap\" rel=\"stylesheet\">\n<script src=\"https://cdn.tailwindcss.com\"></script>\n<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>\n<script src=\"https://cdn.jsdelivr.net/npm/apexcharts\"></script>\n<style>\n*{font-family:'Inter',system-ui,sans-serif!important}\nbody,.v-application,.v-main{background:#050510!important}\n.v-navigation-drawer{background:#0a0a1e!important;border-right:1px solid rgba(255,255,255,0.05)!important}\n.nrdb-ui-group{background:transparent!important;border:none!important;box-shadow:none!important;padding:6px!important}\n.nrdb-ui-group .v-card{background:transparent!important;box-shadow:none!important;border:none!important;overflow:visible!important}\n.nrdb-ui-widget{padding:0!important}\n.v-main__wrap{background:#050510!important}\n::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:transparent}\n::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:3px}\n</style>",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-emerald-500/20 transition-all duration-500 cursor-default font-sans min-h-[320px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-3\">\n      <div class=\"w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/30 shrink-0\">\n        <svg class=\"w-6 h-6 text-white\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M7 20h10\"/><path d=\"M10 20c5.5-2.5.8-6.4 3-10\"/><path d=\"M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z\"/><path d=\"M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z\"/></svg>\n      </div>\n      <div>\n        <h1 class=\"text-xl font-extrabold bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent tracking-tight leading-tight\" style=\"-webkit-background-clip:text;-webkit-text-fill-color:transparent;background:linear-gradient(to right,#34d399,#99f6e4);background-clip:text\">Smart Agriculture</h1>\n        <p class=\"text-[0.6rem] text-gray-500 font-medium tracking-[0.15em] uppercase\">IoT Monitoring System</p>\n      </div>\n    </div>\n    <div class=\"mt-4 flex-1 flex flex-col justify-center\">\n      <p class=\"text-[0.6rem] text-gray-500 uppercase tracking-[0.2em] mb-1 font-semibold\">Outdoor</p>\n      <div class=\"flex items-start gap-0.5\">\n        <span class=\"text-6xl font-black text-white tracking-tighter font-mono leading-none\">{{ temp }}</span>\n        <span class=\"text-2xl text-gray-500 font-light mt-1\">°C</span>\n      </div>\n      <div class=\"flex items-center gap-2 mt-3\">\n        <span class=\"text-xl leading-none\">{{ emoji }}</span>\n        <span class=\"text-sm text-gray-400 font-medium\">{{ desc }}</span>\n      </div>\n    </div>\n    <div class=\"flex items-end justify-between pt-4 border-t border-white/[0.06]\">\n      <div>\n        <p class=\"text-[0.6rem] text-gray-500 font-medium\">{{ date }}</p>\n        <p class=\"text-base text-white font-semibold font-mono tracking-wider\">{{ time }}</p>\n      </div>\n      <div class=\"flex items-center gap-1.5 px-3 py-1.5 rounded-full\" style=\"background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2)\">\n        <span class=\"relative flex h-2 w-2\"><span class=\"animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75\"></span><span class=\"relative inline-flex rounded-full h-2 w-2 bg-emerald-500\"></span></span>\n        <span class=\"text-[0.58rem] text-emerald-400 font-bold tracking-wider\">ONLINE</span>\n      </div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{temp:28.5,emoji:'☀️',desc:'Nắng đẹp',time:'',date:'',tmr:null}},\n  mounted(){\n  if(!window.__saLoaded){\n    window.__saLoaded=true;\n    if(!document.querySelector('script[src*=\"tailwindcss\"]')){\n      var s=document.createElement('script');s.src='https://cdn.tailwindcss.com';\n      s.onload=function(){tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}};};\n      document.head.appendChild(s);\n    }\n    if(!document.querySelector('script[src*=\"apexcharts\"]')){\n      var a=document.createElement('script');a.src='https://cdn.jsdelivr.net/npm/apexcharts';\n      document.head.appendChild(a);\n    }\n    if(!document.querySelector('#sa-g')){\n      var st=document.createElement('style');st.id='sa-g';\n      st.textContent='*{font-family:Inter,system-ui,sans-serif!important}body,.v-application,.v-main,.v-main__wrap{background:#050510!important}.nrdb-ui-group{background:transparent!important;border:none!important;box-shadow:none!important;padding:6px!important}.nrdb-ui-group .v-card{background:transparent!important;box-shadow:none!important;border:none!important;overflow:visible!important}.nrdb-ui-widget{padding:0!important}';\n      document.head.appendChild(st);\n    }\n    ['https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap',\n     'https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap'].forEach(function(u){\n      if(!document.querySelector('link[href*=\"'+u.split('family=')[1].split('&')[0]+'\"]')){\n        var l=document.createElement('link');l.rel='stylesheet';l.href=u;document.head.appendChild(l);\n      }\n    });\n  }\nthis.tick();this.tmr=setInterval(()=>this.tick(),1000);},\n  unmounted(){if(this.tmr)clearInterval(this.tmr);},\n  methods:{\n    tick(){var n=new Date();this.time=n.toLocaleTimeString('vi-VN',{hour:'2-digit',minute:'2-digit',second:'2-digit'});this.date=n.toLocaleDateString('vi-VN',{weekday:'long',year:'numeric',month:'long',day:'numeric'});}\n  },\n  watch:{msg(m){if(m&&m.payload){this.temp=m.payload.value||this.temp;var t=this.temp;this.emoji=t>35?'🔥':t>28?'☀️':t>20?'🌤️':t>10?'🌥️':'❄️';this.desc=t>35?'Rất nóng':t>28?'Nắng nóng':t>20?'Ấm áp':t>10?'Mát mẻ':'Lạnh';}}}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 380,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_health",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_health",
-        "page": "",
-        "ui": "",
-        "name": "HealthGauge",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-emerald-500/20 transition-all duration-500 cursor-default font-sans min-h-[320px] flex flex-col items-center\">\n    <div class=\"flex items-center gap-2 self-start mb-1\">\n      <div class=\"w-1 h-5 rounded-full\" style=\"background:linear-gradient(180deg,#10b981,#059669)\"></div>\n      <h3 class=\"text-sm font-bold text-gray-200 tracking-tight\">Sức khỏe cây trồng</h3>\n    </div>\n    <p class=\"text-[0.6rem] text-gray-500 self-start mb-4\">Plant Health Index</p>\n    <div class=\"relative w-40 h-40 my-auto\">\n      <svg viewBox=\"0 0 120 120\" class=\"w-full h-full\" style=\"transform:rotate(-90deg)\">\n        <circle cx=\"60\" cy=\"60\" r=\"52\" fill=\"none\" stroke=\"rgba(255,255,255,0.04)\" stroke-width=\"8\"/>\n        <circle cx=\"60\" cy=\"60\" r=\"52\" fill=\"none\" stroke-width=\"8\" stroke-linecap=\"round\"\n          :stroke=\"score>=80?'#10b981':score>=60?'#f59e0b':'#ef4444'\"\n          :stroke-dasharray=\"(score*3.267)+' 326.7'\" style=\"transition:all 1s ease-out\"/>\n      </svg>\n      <div class=\"absolute inset-0 flex flex-col items-center justify-center\">\n        <span class=\"text-4xl font-black font-mono leading-none\" :class=\"score>=80?'text-emerald-400':score>=60?'text-amber-400':'text-red-400'\">{{ score }}</span>\n        <span class=\"text-[0.65rem] text-gray-500 font-medium mt-1\">/ 100</span>\n      </div>\n    </div>\n    <div class=\"mt-4 px-4 py-1.5 rounded-full text-xs font-semibold border\"\n      :class=\"score>=80?'bg-emerald-500/10 text-emerald-400 border-emerald-500/20':score>=60?'bg-amber-500/10 text-amber-400 border-amber-500/20':'bg-red-500/10 text-red-400 border-red-500/20'\">\n      {{ score>=80?'🌿 Tuyệt vời':score>=60?'⚠️ Cần chú ý':'🚨 Cần xử lý' }}\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{score:85}},\n  watch:{msg(m){if(m&&m.payload&&m.payload.value!==undefined)this.score=m.payload.value;}}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 440,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_chart",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_chart",
-        "page": "",
-        "ui": "",
-        "name": "TrendChart",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-emerald-500/20 transition-all duration-500 cursor-default font-sans min-h-[320px] flex flex-col\">\n    <div class=\"flex items-center justify-between mb-4\">\n      <div class=\"flex items-center gap-2\">\n        <div class=\"w-1 h-5 rounded-full\" style=\"background:linear-gradient(180deg,#10b981,#059669)\"></div>\n        <h3 class=\"text-sm font-bold text-gray-200 tracking-tight\">Biểu đồ xu hướng</h3>\n      </div>\n      <div class=\"flex gap-1\">\n        <button v-for=\"p in ['1H','6H','24H','7D']\" :key=\"p\" @click=\"sel=p\"\n          class=\"px-2.5 py-1 rounded-lg text-[0.6rem] font-bold transition-all duration-200 tracking-wide border-0 cursor-pointer\"\n          :class=\"sel===p?'text-white shadow-lg':'text-gray-500 hover:text-gray-300'\"\n          :style=\"sel===p?'background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 4px 15px rgba(16,185,129,0.25)':'background:rgba(255,255,255,0.04)'\">{{ p }}</button>\n      </div>\n    </div>\n    <div ref=\"chart\" class=\"flex-1 min-h-[200px]\"></div>\n    <div class=\"flex justify-center gap-5 mt-3 flex-wrap\">\n      <div v-for=\"(l,i) in legs\" :key=\"i\" class=\"flex items-center gap-1.5 cursor-pointer select-none\" @click=\"l.vis=!l.vis;upd()\">\n        <div class=\"w-2.5 h-2.5 rounded-full transition-opacity duration-300\" :style=\"{background:l.c,opacity:l.vis?1:0.25}\"></div>\n        <span class=\"text-[0.6rem] font-semibold transition-colors duration-300\" :class=\"l.vis?'text-gray-300':'text-gray-600'\">{{ l.n }}</span>\n      </div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{sel:'1H',ci:null,cd:{t:[],h:[],s:[],l:[]},mx:40,legs:[{n:'Nhiệt độ',c:'#fb923c',vis:true},{n:'Độ ẩm',c:'#38bdf8',vis:true},{n:'Đất',c:'#10b981',vis:true},{n:'Ánh sáng',c:'#facc15',vis:false}]}},\n  mounted(){this.waitApex();},\n  unmounted(){if(this.ci)this.ci.destroy();},\n  watch:{msg:{handler(m){if(!m||!m.payload)return;var d=m.payload,x=Date.now();\n    if(d.t!==undefined){this.cd.t.push({x:x,y:d.t});if(this.cd.t.length>this.mx)this.cd.t.shift();}\n    if(d.h!==undefined){this.cd.h.push({x:x,y:d.h});if(this.cd.h.length>this.mx)this.cd.h.shift();}\n    if(d.s!==undefined){this.cd.s.push({x:x,y:d.s});if(this.cd.s.length>this.mx)this.cd.s.shift();}\n    if(d.l!==undefined){this.cd.l.push({x:x,y:d.l});if(this.cd.l.length>this.mx)this.cd.l.shift();}\n    this.upd();},deep:true}},\n  methods:{\n    waitApex(){if(typeof ApexCharts!=='undefined')this.init();else setTimeout(()=>this.waitApex(),300);},\n    init(){if(!this.$refs.chart)return;\n      this.ci=new ApexCharts(this.$refs.chart,{chart:{type:'area',height:'100%',width:'100%',background:'transparent',toolbar:{show:false},zoom:{enabled:false},animations:{enabled:true,speed:600}},\n        theme:{mode:'dark'},colors:['#fb923c','#38bdf8','#10b981','#facc15'],\n        series:[{name:'Nhiệt (°C)',data:[]},{name:'Ẩm KK (%)',data:[]},{name:'Ẩm đất (%)',data:[]},{name:'Sáng (klux)',data:[]}],\n        stroke:{curve:'smooth',width:2},fill:{type:'gradient',gradient:{shadeIntensity:1,opacityFrom:0.25,opacityTo:0.02,stops:[0,90,100]}},\n        grid:{borderColor:'rgba(255,255,255,0.04)',strokeDashArray:4,xaxis:{lines:{show:false}},yaxis:{lines:{show:true}}},\n        xaxis:{type:'datetime',labels:{style:{colors:'#4b5563',fontSize:'10px',fontFamily:'JetBrains Mono'}},axisBorder:{show:false},axisTicks:{show:false}},\n        yaxis:{labels:{style:{colors:'#4b5563',fontSize:'10px',fontFamily:'JetBrains Mono'}}},\n        legend:{show:false},tooltip:{theme:'dark',x:{format:'HH:mm:ss'}},dataLabels:{enabled:false}});\n      this.ci.render();},\n    upd(){if(!this.ci)return;this.ci.updateSeries([\n      {name:'Nhiệt (°C)',data:this.legs[0].vis?[...this.cd.t]:[]},\n      {name:'Ẩm KK (%)',data:this.legs[1].vis?[...this.cd.h]:[]},\n      {name:'Ẩm đất (%)',data:this.legs[2].vis?[...this.cd.s]:[]},\n      {name:'Sáng (klux)',data:this.legs[3].vis?[...this.cd.l]:[]}]);}\n  }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 500,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_temp",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_temp",
-        "page": "",
-        "ui": "",
-        "name": "[UI] DHT Temperature",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#fb923c33] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#fb923c,#ea580c);box-shadow:0 6px 20px #fb923c30\">\n        🌡️\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Nhiệt độ</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Temperature</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#fb923c\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#fb923c99\">°C</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      \n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#fb923c15\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#fb923c,#ea580c)\" :style=\"{width: Math.min(val / 50 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data() {\n    return {\n      val: 28.5,\n      trend: 0\n    }\n  },\n  watch: {\n  msg(m) {\n  if (m && m.payload !== undefined) {\n  this.val = Number(m.payload)\n  }\n  }\n  }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 460,
-        "y": 60,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_soil",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_soil",
-        "page": "",
-        "ui": "",
-        "name": "Độ ẩm đất Sensor",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#10b98133] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#10b981,#047857);box-shadow:0 6px 20px #10b98130\">\n        🌱\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Độ ẩm đất</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Soil Moisture</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#10b981\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#10b98199\">%</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      \n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#10b98115\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#10b981,#047857)\" :style=\"{width: Math.min(val / 100 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data() { return { val: 65, trend: 0 } },\n  watch: { msg(m) { if(m&&m.payload){if(m.payload.value!==undefined)this.val=m.payload.value;if(m.payload.trend!==undefined)this.trend=m.payload.trend;} } }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 680,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_light",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_light",
-        "page": "",
-        "ui": "",
-        "name": "Ánh sáng Sensor",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#facc1533] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#facc15,#ca8a04);box-shadow:0 6px 20px #facc1530\">\n        ☀️\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Ánh sáng</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Light Intensity</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#facc15\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#facc1599\">lux</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      \n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#facc1515\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#facc15,#ca8a04)\" :style=\"{width: Math.min(val / 100000 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data() { return { val: 45000, trend: 0 } },\n  watch: { msg(m) { if(m&&m.payload){if(m.payload.value!==undefined)this.val=m.payload.value;if(m.payload.trend!==undefined)this.trend=m.payload.trend;} } }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_ph",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_ph",
-        "page": "",
-        "ui": "",
-        "name": "Độ pH Sensor",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#a855f733] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#a855f7,#7c3aed);box-shadow:0 6px 20px #a855f730\">\n        🧪\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Độ pH</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Soil pH Level</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#a855f7\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#a855f799\">pH</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      <span class=\"text-[0.55rem] text-gray-600 ml-auto\">{{ val < 6 ? \"Acid\" : val > 7.5 ? \"Alkaline\" : \"Neutral\" }}</span>\n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#a855f715\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#a855f7,#7c3aed)\" :style=\"{width: Math.min(val / 14 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data() { return { val: 6.5, trend: 0 } },\n  watch: { msg(m) { if(m&&m.payload){if(m.payload.value!==undefined)this.val=m.payload.value;if(m.payload.trend!==undefined)this.trend=m.payload.trend;} } }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 800,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_rain",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_rain",
-        "page": "",
-        "ui": "",
-        "name": "Lượng mưa Sensor",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#6366f133] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#6366f1,#4338ca);box-shadow:0 6px 20px #6366f130\">\n        🌧️\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Lượng mưa</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Rainfall</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#6366f1\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#6366f199\">mm</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      <span class=\"text-[0.55rem] text-gray-600 ml-auto\">{{ val < 2 ? \"Khô ráo\" : val < 10 ? \"Mưa nhẹ\" : \"Mưa lớn\" }}</span>\n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#6366f115\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#6366f1,#4338ca)\" :style=\"{width: Math.min(val / 50 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data() { return { val: 3.2, trend: 0 } },\n  watch: { msg(m) { if(m&&m.payload){if(m.payload.value!==undefined)this.val=m.payload.value;if(m.payload.trend!==undefined)this.trend=m.payload.trend;} } }\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 860,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_irrig",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_irrig",
-        "page": "",
-        "ui": "",
-        "name": "IrrigationCtrl",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-sky-500/20 transition-all duration-500 cursor-default font-sans min-h-[260px] flex flex-col\">\n    <div class=\"flex items-center gap-2 mb-4\">\n      <div class=\"w-1 h-5 rounded-full\" style=\"background:linear-gradient(180deg,#38bdf8,#0284c7)\"></div>\n      <h3 class=\"text-sm font-bold text-gray-200 tracking-tight\">Hệ thống tưới</h3>\n      <span class=\"text-[0.55rem] text-gray-500 ml-auto font-medium\">Irrigation</span>\n    </div>\n    <div class=\"flex flex-col gap-2.5 flex-1\">\n      <div v-for=\"z in zones\" :key=\"z.name\" class=\"flex items-center justify-between p-3 rounded-xl border border-white/[0.04] hover:border-white/[0.08] transition-all duration-300\" style=\"background:rgba(255,255,255,0.015)\">\n        <div class=\"flex items-center gap-3\">\n          <div class=\"w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-300\"\n            :class=\"z.on?'text-emerald-400':'text-gray-600'\"\n            :style=\"{background:z.on?'rgba(16,185,129,0.15)':'rgba(255,255,255,0.03)'}\">\n            <svg class=\"w-4 h-4\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z\"/></svg>\n          </div>\n          <div>\n            <p class=\"text-xs text-gray-200 font-semibold\">{{ z.name }}</p>\n            <p class=\"text-[0.55rem] text-gray-500\">{{ z.sched }}</p>\n          </div>\n        </div>\n        <div @click=\"z.on=!z.on;send({payload:{zone:z.name,on:z.on}})\"\n          class=\"w-11 h-6 rounded-full p-0.5 cursor-pointer transition-all duration-300 flex items-center\"\n          :style=\"{background:z.on?'linear-gradient(135deg,#10b981,#059669)':'rgba(255,255,255,0.06)',justifyContent:z.on?'flex-end':'flex-start'}\">\n          <div class=\"w-5 h-5 rounded-full bg-white shadow-md transition-transform duration-300\"></div>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{zones:[\n    {name:'Zone A - Rau',sched:'06:00-07:00',on:true},\n    {name:'Zone B - Cây quả',sched:'05:30-06:30',on:false},\n    {name:'Zone C - Hoa',sched:'17:00-17:30',on:true},\n    {name:'Zone D - Nhà kính',sched:'Tự động',on:true}\n  ]}},\n  watch:{msg(m){if(m&&m.payload&&m.payload.zones)this.zones=m.payload.zones;}}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 920,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_alerts",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_alerts",
-        "page": "",
-        "ui": "",
-        "name": "AlertsPanel",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-amber-500/20 transition-all duration-500 cursor-default font-sans min-h-[260px] flex flex-col\">\n    <div class=\"flex items-center gap-2 mb-4\">\n      <div class=\"w-1 h-5 rounded-full\" style=\"background:linear-gradient(180deg,#f59e0b,#d97706)\"></div>\n      <h3 class=\"text-sm font-bold text-gray-200 tracking-tight\">Cảnh báo gần đây</h3>\n      <span class=\"ml-auto px-2 py-0.5 rounded-full text-[0.55rem] font-bold\" style=\"background:rgba(245,158,11,0.1);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)\">{{ items.length }}</span>\n    </div>\n    <div class=\"flex flex-col gap-2 flex-1 overflow-y-auto\">\n      <div v-for=\"a in items\" :key=\"a.id\" class=\"flex items-start gap-3 p-3 rounded-xl border transition-all duration-300 hover:bg-white/[0.02]\"\n        :style=\"{background:a.t==='danger'?'rgba(239,68,68,0.03)':a.t==='warning'?'rgba(245,158,11,0.03)':'rgba(16,185,129,0.03)',borderColor:a.t==='danger'?'rgba(239,68,68,0.1)':a.t==='warning'?'rgba(245,158,11,0.1)':'rgba(16,185,129,0.1)'}\">\n        <div class=\"w-2 h-2 rounded-full mt-1 shrink-0\"\n          :class=\"a.t==='danger'?'bg-red-400':a.t==='warning'?'bg-amber-400':'bg-emerald-400'\"></div>\n        <div class=\"min-w-0\">\n          <p class=\"text-xs text-gray-200 font-semibold leading-snug\">{{ a.msg }}</p>\n          <p class=\"text-[0.55rem] text-gray-500 mt-0.5\">{{ a.time }}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{items:[\n    {id:1,t:'warning',msg:'Độ ẩm đất Zone B thấp (42%)',time:'5 phút trước'},\n    {id:2,t:'danger',msg:'Nhiệt độ vượt ngưỡng (38°C)',time:'12 phút trước'},\n    {id:3,t:'info',msg:'Hệ thống tưới Zone A hoàn tất',time:'1 giờ trước'},\n    {id:4,t:'warning',msg:'pH đất giảm xuống 5.8',time:'2 giờ trước'}\n  ]}},\n  watch:{msg(m){if(m&&m.payload&&m.payload.alerts)this.items=m.payload.alerts;}}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 980,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "t_env",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_env",
-        "page": "",
-        "ui": "",
-        "name": "EnvStats",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-6 h-full hover:border-purple-500/20 transition-all duration-500 cursor-default font-sans min-h-[260px] flex flex-col\">\n    <div class=\"flex items-center gap-2 mb-4\">\n      <div class=\"w-1 h-5 rounded-full\" style=\"background:linear-gradient(180deg,#a855f7,#7c3aed)\"></div>\n      <h3 class=\"text-sm font-bold text-gray-200 tracking-tight\">Môi trường</h3>\n    </div>\n    <div class=\"flex flex-col gap-3 flex-1\">\n      <div v-for=\"e in items\" :key=\"e.label\" class=\"flex flex-col gap-1.5\">\n        <div class=\"flex items-center justify-between\">\n          <span class=\"text-[0.65rem] text-gray-500 font-medium\">{{ e.label }}</span>\n          <span class=\"text-xs font-bold font-mono\" :style=\"{color:e.color}\">{{ e.val }} {{ e.unit }}</span>\n        </div>\n        <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:rgba(255,255,255,0.03)\">\n          <div class=\"h-full rounded-full transition-all duration-700\" :style=\"{width:e.pct+'%',background:e.color}\"></div>\n        </div>\n      </div>\n    </div>\n    <div class=\"grid grid-cols-2 gap-2 mt-4 pt-4 border-t border-white/[0.06]\">\n      <div class=\"rounded-lg p-2.5 text-center\" style=\"background:rgba(255,255,255,0.02)\">\n        <p class=\"text-[0.5rem] text-gray-500 uppercase tracking-wider font-semibold mb-1\">Uptime</p>\n        <p class=\"text-sm text-emerald-400 font-bold font-mono\">99.8%</p>\n      </div>\n      <div class=\"rounded-lg p-2.5 text-center\" style=\"background:rgba(255,255,255,0.02)\">\n        <p class=\"text-[0.5rem] text-gray-500 uppercase tracking-wider font-semibold mb-1\">Sensors</p>\n        <p class=\"text-sm text-sky-400 font-bold font-mono\">6/6</p>\n      </div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\n  data(){return{items:[\n    {label:'Tốc độ gió',val:12,unit:'km/h',color:'#38bdf8',pct:24},\n    {label:'Áp suất',val:1013,unit:'hPa',color:'#a855f7',pct:75},\n    {label:'UV Index',val:6,unit:'',color:'#facc15',pct:54},\n    {label:'CO₂',val:420,unit:'ppm',color:'#10b981',pct:42},\n    {label:'Nhiệt đất',val:24,unit:'°C',color:'#fb923c',pct:48}\n  ]}},\n  watch:{msg(m){if(!m||!m.payload)return;var d=m.payload;\n    if(d.wind!==undefined){this.items[0].val=d.wind;this.items[0].pct=Math.min(d.wind/50*100,100);}\n    if(d.press!==undefined){this.items[1].val=d.press;this.items[1].pct=(d.press-980)/60*100;}\n    if(d.uv!==undefined){this.items[2].val=d.uv;this.items[2].pct=d.uv/11*100;}\n    if(d.co2!==undefined){this.items[3].val=d.co2;this.items[3].pct=Math.min(d.co2/1000*100,100);}\n    if(d.soilT!==undefined){this.items[4].val=d.soilT;this.items[4].pct=d.soilT/50*100;}\n  }}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 760,
-        "y": 1040,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "i_weather",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "WeatherCard Timer",
-        "props": [
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Nhiệt độ",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "°C",
+        "segments": [
             {
-                "p": "payload"
+                "from": "-40",
+                "color": "#53eae7",
+                "text": "",
+                "textType": "value"
             },
             {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "weather",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 380,
-        "wires": [
-            [
-                "f_weather"
-            ]
-        ]
-    },
-    {
-        "id": "i_health",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "HealthGauge Timer",
-        "props": [
-            {
-                "p": "payload"
+                "from": "0",
+                "color": "#b4effe",
+                "text": "",
+                "textType": "value"
             },
             {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "health",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 440,
-        "wires": [
-            [
-                "f_health"
-            ]
-        ]
-    },
-    {
-        "id": "i_chart",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "TrendChart Timer",
-        "props": [
-            {
-                "p": "payload"
+                "from": "30",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "value"
             },
             {
-                "p": "topic",
-                "vt": "str"
+                "from": "50",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "value"
             }
         ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "chart",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 500,
-        "wires": [
-            [
-                "f_chart"
-            ]
-        ]
-    },
-    {
-        "id": "i_temp",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "Nhiệt độ Sensor Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "temp",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 560,
-        "wires": [
-            [
-                "f_temp"
-            ]
-        ]
-    },
-    {
-        "id": "i_soil",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "Độ ẩm đất Sensor Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "soil",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 680,
-        "wires": [
-            [
-                "f_soil"
-            ]
-        ]
-    },
-    {
-        "id": "i_light",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "Ánh sáng Sensor Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "light",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 740,
-        "wires": [
-            [
-                "f_light"
-            ]
-        ]
-    },
-    {
-        "id": "i_ph",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "Độ pH Sensor Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "ph",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 800,
-        "wires": [
-            [
-                "f_ph"
-            ]
-        ]
-    },
-    {
-        "id": "i_rain",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "Lượng mưa Sensor Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "rain",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 860,
-        "wires": [
-            [
-                "f_rain"
-            ]
-        ]
-    },
-    {
-        "id": "i_irrig",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "IrrigationCtrl Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "30",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "irrig",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 920,
-        "wires": [
-            [
-                "f_irrig"
-            ]
-        ]
-    },
-    {
-        "id": "i_alerts",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "AlertsPanel Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "20",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "alerts",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 980,
-        "wires": [
-            [
-                "f_alerts"
-            ]
-        ]
-    },
-    {
-        "id": "i_env",
-        "type": "inject",
-        "z": "sa_tab",
-        "name": "EnvStats Timer",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": "1",
-        "topic": "env",
-        "payload": "",
-        "payloadType": "date",
-        "x": 200,
-        "y": 1040,
-        "wires": [
-            [
-                "f_env"
-            ]
-        ]
-    },
-    {
-        "id": "f_weather",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "WeatherCard Mock",
-        "func": "var p=context.get('v')||28.5;var n=p+(Math.random()-0.5)*1.6;var h=new Date().getHours();var bias=h>=6&&h<=18?0.1:-0.1;var v=parseFloat(Math.max(18,Math.min(42,n+bias)).toFixed(1));context.set('v',v);msg.payload={value:v};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 380,
-        "wires": [
-            [
-                "t_weather"
-            ]
-        ]
-    },
-    {
-        "id": "f_health",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "HealthGauge Mock",
-        "func": "var t=context.get('t')||28;var h=context.get('h')||70;var s=context.get('s')||62;var p=context.get('p')||6.5;\nt+=(Math.random()-0.5)*1.2;h+=(Math.random()-0.5)*2;s+=(Math.random()-0.5)*1.5;p+=(Math.random()-0.5)*0.08;\nt=Math.max(18,Math.min(42,t));h=Math.max(40,Math.min(95,h));s=Math.max(25,Math.min(90,s));p=Math.max(4.5,Math.min(8.5,p));\ncontext.set('t',t);context.set('h',h);context.set('s',s);context.set('p',p);\nvar sc=100;\nsc-=t>35||t<15?25:t>32||t<20?10:0;\nsc-=h<40||h>90?20:h<50||h>85?8:0;\nsc-=s<30||s>85?25:s<45||s>75?10:0;\nsc-=p<5.5||p>7.5?15:p<6||p>7?5:0;\nmsg.payload={value:Math.max(0,Math.min(100,Math.round(sc)))};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 440,
-        "wires": [
-            [
-                "t_health"
-            ]
-        ]
-    },
-    {
-        "id": "f_chart",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "TrendChart Mock",
-        "func": "var t=context.get('t')||28;var h=context.get('h')||70;var s=context.get('s')||62;var l=context.get('l')||45;\nt+=(Math.random()-0.5)*1.4;h+=(Math.random()-0.5)*2.5;s+=(Math.random()-0.5)*2;l+=(Math.random()-0.5)*8;\nt=parseFloat(Math.max(18,Math.min(42,t)).toFixed(1));h=parseFloat(Math.max(40,Math.min(95,h)).toFixed(1));\ns=parseFloat(Math.max(25,Math.min(90,s)).toFixed(1));l=Math.round(Math.max(0,Math.min(100,l)));\ncontext.set('t',t);context.set('h',h);context.set('s',s);context.set('l',l);\nmsg.payload={t:t,h:h,s:s,l:l};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 500,
-        "wires": [
-            [
-                "t_chart"
-            ]
-        ]
-    },
-    {
-        "id": "f_temp",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "Nhiệt độ Sensor Mock",
-        "func": "var p=context.get('v')||28.5;var n=p+(Math.random()-0.5)*2*0.8;var v=parseFloat(Math.max(18,Math.min(42,n)).toFixed(1));var t=parseFloat(((v-p)/Math.max(Math.abs(p),0.1)*100).toFixed(1));context.set('v',v);msg.payload={value:v,trend:t};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 560,
+        "min": "-40",
+        "max": "80",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 300,
+        "y": 80,
         "wires": [
             []
         ]
     },
     {
-        "id": "f_soil",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "Độ ẩm đất Sensor Mock",
-        "func": "var p=context.get('v')||65;var n=p+(Math.random()-0.5)*2*1.2;var v=parseFloat(Math.max(25,Math.min(90,n)).toFixed(1));var t=parseFloat(((v-p)/Math.max(Math.abs(p),0.1)*100).toFixed(1));context.set('v',v);msg.payload={value:v,trend:t};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 680,
-        "wires": [
-            [
-                "t_soil"
-            ]
-        ]
-    },
-    {
-        "id": "f_light",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "Ánh sáng Sensor Mock",
-        "func": "var p=context.get('v')||45000;var n=p+(Math.random()-0.5)*2*3000;var v=Math.round(Math.max(0,Math.min(100000,n)));var t=parseFloat(((v-p)/Math.max(Math.abs(p),1)*100).toFixed(1));context.set('v',v);msg.payload={value:v,trend:t};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 740,
-        "wires": [
-            [
-                "t_light"
-            ]
-        ]
-    },
-    {
-        "id": "f_ph",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "Độ pH Sensor Mock",
-        "func": "var p=context.get('v')||6.5;var n=p+(Math.random()-0.5)*2*0.05;var v=parseFloat(Math.max(4.5,Math.min(8.5,n)).toFixed(1));var t=parseFloat(((v-p)/Math.max(Math.abs(p),0.1)*100).toFixed(1));context.set('v',v);msg.payload={value:v,trend:t};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 800,
-        "wires": [
-            [
-                "t_ph"
-            ]
-        ]
-    },
-    {
-        "id": "f_rain",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "Lượng mưa Sensor Mock",
-        "func": "var p=context.get('v')||3.2;var n=p+(Math.random()-0.5)*2*0.5;var v=parseFloat(Math.max(0,Math.min(50,n)).toFixed(1));var t=parseFloat(((v-p)/Math.max(Math.abs(p),0.1)*100).toFixed(1));context.set('v',v);msg.payload={value:v,trend:t};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 860,
-        "wires": [
-            [
-                "t_rain"
-            ]
-        ]
-    },
-    {
-        "id": "f_irrig",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "IrrigationCtrl Mock",
-        "func": "msg.payload={zones:[\n{name:'Zone A - Rau',sched:'06:00-07:00',on:Math.random()>0.3},\n{name:'Zone B - Cây quả',sched:'05:30-06:30',on:Math.random()>0.6},\n{name:'Zone C - Hoa',sched:'17:00-17:30',on:Math.random()>0.4},\n{name:'Zone D - Nhà kính',sched:'Tự động',on:true}\n]};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 920,
-        "wires": [
-            [
-                "t_irrig"
-            ]
-        ]
-    },
-    {
-        "id": "f_alerts",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "AlertsPanel Mock",
-        "func": "var types=['warning','danger','info'];\nvar msgs=['Độ ẩm đất thấp ('+Math.round(30+Math.random()*20)+'%)','Nhiệt độ cao ('+Math.round(33+Math.random()*7)+'°C)','Tưới Zone '+['A','B','C','D'][Math.floor(Math.random()*4)]+' xong','pH đất bất thường ('+((5+Math.random()*3).toFixed(1))+')','CO₂ cao ('+Math.round(500+Math.random()*200)+' ppm)'];\nvar alerts=[];for(var i=0;i<4;i++){alerts.push({id:i,t:types[Math.floor(Math.random()*3)],msg:msgs[Math.floor(Math.random()*msgs.length)],time:Math.round(Math.random()*120)+' phút trước'});}\nmsg.payload={alerts:alerts};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 980,
-        "wires": [
-            [
-                "t_alerts"
-            ]
-        ]
-    },
-    {
-        "id": "f_env",
-        "type": "function",
-        "z": "sa_tab",
-        "name": "EnvStats Mock",
-        "func": "var w=context.get('w')||12;var p=context.get('p')||1013;var u=context.get('u')||6;var c=context.get('c')||420;var st=context.get('st')||24;\nw=Math.max(0,Math.round(w+(Math.random()-0.5)*4));p=Math.round(p+(Math.random()-0.5)*2);\nu=parseFloat(Math.max(0,Math.min(11,u+(Math.random()-0.5)*0.8)).toFixed(1));\nc=Math.round(Math.max(350,Math.min(600,c+(Math.random()-0.5)*10)));\nst=parseFloat(Math.max(15,Math.min(35,st+(Math.random()-0.5)*0.5)).toFixed(1));\ncontext.set('w',w);context.set('p',p);context.set('u',u);context.set('c',c);context.set('st',st);\nmsg.payload={wind:w,press:p,uv:u,co2:c,soilT:st};return msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 440,
-        "y": 1040,
-        "wires": [
-            [
-                "t_env"
-            ]
-        ]
-    },
-    {
-        "id": "6b9fdc020fcd5e66",
+        "id": "512131535b8a6e38",
         "type": "mqtt in",
         "z": "sa_tab",
-        "name": "DHT Temperature",
-        "topic": "senda-farm/temperature",
+        "name": "DHT Temp",
+        "topic": "senda-farm/dht/temperature",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "6eaf401a93ae6f4e",
@@ -821,38 +80,128 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 170,
-        "y": 100,
+        "x": 100,
+        "y": 80,
         "wires": [
             [
-                "t_temp",
-                "6335add269723dec"
+                "0d07dbc9973e4c4a",
+                "6b43210edddf867a"
             ]
         ]
     },
     {
-        "id": "6335add269723dec",
-        "type": "debug",
+        "id": "b2ce390193ad82fb",
+        "type": "mqtt out",
         "z": "sa_tab",
-        "name": "Debug Temperature",
-        "active": true,
-        "tosidebar": true,
-        "console": true,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 460,
-        "y": 140,
+        "name": "LED",
+        "topic": "senda-farm/output/led",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6eaf401a93ae6f4e",
+        "x": 290,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "8f597556427ff287",
+        "id": "dcc7cabcd06e2fa4",
+        "type": "ui-gauge",
+        "z": "sa_tab",
+        "name": "Độ ẩm",
+        "group": "17af2483ca06839b",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Độ ẩm",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "%",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "value"
+            },
+            {
+                "from": "30",
+                "color": "#7ab4ff",
+                "text": "",
+                "textType": "value"
+            },
+            {
+                "from": "70",
+                "color": "#006eff",
+                "text": "",
+                "textType": "value"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 290,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f0334e9e5cdda136",
+        "type": "ui-switch",
+        "z": "sa_tab",
+        "name": "Switch",
+        "label": "LED",
+        "group": "7f3df657b3c135ff",
+        "order": 2,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 90,
+        "y": 240,
+        "wires": [
+            [
+                "b2ce390193ad82fb",
+                "10143cfbb7356fce"
+            ]
+        ]
+    },
+    {
+        "id": "69c7b1efcd518915",
         "type": "mqtt in",
         "z": "sa_tab",
-        "name": "DHT Humidity",
-        "topic": "senda-farm/humidity",
+        "name": "DHT Hum",
+        "topic": "senda-farm/dht/humidity",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "6eaf401a93ae6f4e",
@@ -860,208 +209,151 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 150,
-        "y": 260,
+        "x": 100,
+        "y": 160,
         "wires": [
             [
-                "da1f7cd6f38bca75",
-                "c7ac7e8e415d35af"
+                "dcc7cabcd06e2fa4",
+                "67a5d1b7692cb984"
             ]
         ]
     },
     {
-        "id": "da1f7cd6f38bca75",
-        "type": "ui-template",
-        "z": "sa_tab",
-        "group": "g_hum",
-        "page": "",
-        "ui": "",
-        "name": "[UI] DHT Humidity",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "head": "",
-        "format": "<template>\n  <div class=\"bg-[#0c0c22] border border-white/[0.06] rounded-2xl p-5 h-full hover:border-[#38bdf833] transition-all duration-500 cursor-default font-sans min-h-[180px] flex flex-col justify-between\">\n    <div class=\"flex items-center gap-2.5 mb-4\">\n      <div class=\"w-10 h-10 rounded-xl flex items-center justify-center text-lg leading-none shrink-0\" style=\"background:linear-gradient(135deg,#38bdf8,#0284c7);box-shadow:0 6px 20px #38bdf830\">\n        💧\n      </div>\n      <div class=\"min-w-0\">\n        <p class=\"text-[0.7rem] text-gray-400 font-semibold uppercase tracking-wider truncate\">Độ ẩm KK</p>\n        <p class=\"text-[0.55rem] text-gray-600 truncate\">Air Humidity</p>\n      </div>\n    </div>\n    <div class=\"flex items-baseline gap-1 mb-1\">\n      <span class=\"text-[2rem] font-black font-mono tracking-tighter leading-none\" style=\"color:#38bdf8\">{{ val }}</span>\n      <span class=\"text-sm font-medium\" style=\"color:#38bdf899\">%</span>\n    </div>\n    <div class=\"flex items-center gap-1.5 mb-3\">\n      <span class=\"text-[0.65rem] font-bold\" :class=\"trend >= 0 ? 'text-emerald-400' : 'text-red-400'\">{{ trend >= 0 ? '↑' : '↓' }} {{ Math.abs(trend) }}%</span>\n      \n    </div>\n    <div class=\"w-full h-1 rounded-full overflow-hidden\" style=\"background:#38bdf815\">\n      <div class=\"h-full rounded-full transition-all duration-700\" style=\"background:linear-gradient(90deg,#38bdf8,#0284c7)\" :style=\"{width: Math.min(val / 100 * 100, 100) + '%'}\"></div>\n    </div>\n  </div>\n</template>\n<script>\nexport default {\ndata() {\nreturn {\nval: 72,\ntrend: 0\n}\n},\nwatch: {\nmsg(m) {\nconsole.log(\"Received:\", m)\n\nif (m && m.payload !== undefined) {\nthis.val = Number(m.payload)\n}\n}\n}\n}\n</script>",
-        "storeOutMessages": true,
-        "passthru": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 450,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "c7ac7e8e415d35af",
+        "id": "6b43210edddf867a",
         "type": "debug",
         "z": "sa_tab",
-        "name": "Debug Humidity",
-        "active": true,
+        "name": "debug 1",
+        "active": false,
         "tosidebar": true,
-        "console": true,
+        "console": false,
         "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
+        "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 450,
-        "y": 300,
+        "x": 480,
+        "y": 80,
         "wires": []
     },
     {
-        "id": "g_weather",
+        "id": "67a5d1b7692cb984",
+        "type": "debug",
+        "z": "sa_tab",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "10143cfbb7356fce",
+        "type": "debug",
+        "z": "sa_tab",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "f11b914e190b75b0",
+        "type": "ui-dropdown",
+        "z": "sa_tab",
+        "group": "7f3df657b3c135ff",
+        "name": "Options",
+        "label": "LCD Display:",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Không khí",
+                "value": "DHT",
+                "type": "str"
+            },
+            {
+                "label": "Trong Đất",
+                "value": "CSMS",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 100,
+        "y": 320,
+        "wires": [
+            [
+                "b0f79f49e1eee0de",
+                "ed87d751b2116aba"
+            ]
+        ]
+    },
+    {
+        "id": "b0f79f49e1eee0de",
+        "type": "mqtt out",
+        "z": "sa_tab",
+        "name": "LCD",
+        "topic": "senda-farm/output/lcd",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "6eaf401a93ae6f4e",
+        "x": 290,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "ed87d751b2116aba",
+        "type": "debug",
+        "z": "sa_tab",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "17af2483ca06839b",
         "type": "ui-group",
-        "name": "Weather",
-        "page": "sa_page",
-        "width": "4",
+        "name": "DHT",
+        "page": "227ad96d7188d768",
+        "width": 6,
         "height": 1,
-        "order": 1,
-        "showTitle": false,
+        "order": 2,
+        "showTitle": true,
         "className": "",
         "visible": "true",
         "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "g_health",
-        "type": "ui-group",
-        "name": "Health",
-        "page": "sa_page",
-        "width": 3,
-        "height": 1,
-        "order": 2,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_chart",
-        "type": "ui-group",
-        "name": "Chart",
-        "page": "sa_page",
-        "width": 5,
-        "height": 1,
-        "order": 3,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_temp",
-        "type": "ui-group",
-        "name": "Temperature",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 4,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_soil",
-        "type": "ui-group",
-        "name": "Soil",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 6,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_light",
-        "type": "ui-group",
-        "name": "Light",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 7,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_ph",
-        "type": "ui-group",
-        "name": "pH",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 8,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_rain",
-        "type": "ui-group",
-        "name": "Rainfall",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 9,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_irrig",
-        "type": "ui-group",
-        "name": "Irrigation",
-        "page": "sa_page",
-        "width": 4,
-        "height": 1,
-        "order": 10,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_alerts",
-        "type": "ui-group",
-        "name": "Alerts",
-        "page": "sa_page",
-        "width": 5,
-        "height": 1,
-        "order": 11,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
-        "groupType": "default"
-    },
-    {
-        "id": "g_env",
-        "type": "ui-group",
-        "name": "Environment",
-        "page": "sa_page",
-        "width": 3,
-        "height": 1,
-        "order": 12,
-        "showTitle": false,
-        "className": "",
-        "visible": true,
-        "disabled": false,
         "groupType": "default"
     },
     {
@@ -1097,38 +389,43 @@
         "sessionExpiry": ""
     },
     {
-        "id": "g_hum",
+        "id": "7f3df657b3c135ff",
         "type": "ui-group",
-        "name": "Humidity",
-        "page": "sa_page",
-        "width": 2,
-        "height": 1,
-        "order": 5,
-        "showTitle": false,
+        "name": "Output",
+        "page": "227ad96d7188d768",
+        "width": "2",
+        "height": "3",
+        "order": 1,
+        "showTitle": true,
         "className": "",
-        "visible": true,
-        "disabled": false,
+        "visible": "true",
+        "disabled": "false",
         "groupType": "default"
     },
     {
-        "id": "sa_page",
+        "id": "227ad96d7188d768",
         "type": "ui-page",
-        "name": "Dashboard",
+        "name": "Senda Farm",
         "ui": "a10a508b7852b0ba",
-        "path": "/home",
-        "icon": "mdi-leaf",
+        "path": "/page1",
+        "icon": "home",
         "layout": "grid",
-        "theme": "sa_theme",
+        "theme": "8f9f922bf37199ce",
         "breakpoints": [
             {
                 "name": "Default",
                 "px": "0",
-                "cols": "4"
+                "cols": "3"
             },
             {
                 "name": "Tablet",
                 "px": "576",
-                "cols": "8"
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
             },
             {
                 "name": "Desktop",
@@ -1176,26 +473,26 @@
         "allowInstall": false
     },
     {
-        "id": "sa_theme",
+        "id": "8f9f922bf37199ce",
         "type": "ui-theme",
-        "name": "BentoDark",
+        "name": "Light",
         "colors": {
-            "surface": "#0c0c22",
-            "primary": "#10b981",
-            "bgPage": "#050510",
-            "groupBg": "transparent",
-            "groupOutline": "transparent"
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
         },
         "sizes": {
             "density": "default",
-            "pagePadding": "8px",
-            "groupGap": "0px",
-            "groupBorderRadius": "0px",
-            "widgetGap": "0px"
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
         }
     },
     {
-        "id": "b2ded9b00a54ce9a",
+        "id": "697ef977c38ae456",
         "type": "global-config",
         "env": [],
         "modules": {

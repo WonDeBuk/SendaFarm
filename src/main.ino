@@ -39,8 +39,8 @@ void loop() {
    Serial.println("T: " + Temperature);
    Serial.println("H: " + Humidity);   
 
-   client.publish("senda-farm/temperature", Temperature.c_str());
-   client.publish("senda-farm/humidity", Humidity.c_str());
+   client.publish("senda-farm/dht/temperature", Temperature.c_str());
+   client.publish("senda-farm/dht/humidity", Humidity.c_str());
 
    /* DHT -> LCD */
    displayLCD("T: " + Temperature, "H: " + Humidity);

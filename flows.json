@@ -47,14 +47,17 @@
             "76a1c9863f59da9c",
             "c9c9e003c91405b1",
             "5fba2043bd4d70a5",
-            "d87abe35d2b8a19c",
             "85352bb9d4f0f71d",
-            "5d307a8588cefc35"
+            "5d307a8588cefc35",
+            "53d0c06bc3a8bb39",
+            "5e9942b924a44548",
+            "5b40d0b8ab6acbe3",
+            "7b059dcfc97635e0"
         ],
         "x": 94,
         "y": 759,
         "w": 812,
-        "h": 262
+        "h": 342
     },
     {
         "id": "46e19fa9e1cfab74",
@@ -363,7 +366,7 @@
         "useparts": false,
         "accumulate": true,
         "timeout": "",
-        "count": "2",
+        "count": "3",
         "reduceRight": false,
         "reduceExp": "",
         "reduceInit": "",
@@ -373,8 +376,8 @@
         "y": 920,
         "wires": [
             [
-                "d87abe35d2b8a19c",
-                "85352bb9d4f0f71d"
+                "85352bb9d4f0f71d",
+                "7b059dcfc97635e0"
             ]
         ]
     },
@@ -566,9 +569,9 @@
         "z": "sa_tab",
         "g": "46e19fa9e1cfab74",
         "group": "6e58a779fc4eff0a",
-        "order": 2,
+        "order": 3,
         "width": 0,
-        "height": 0,
+        "height": 2,
         "name": "Chat Reply",
         "label": "Reply",
         "format": "{{msg.payload}}",
@@ -638,7 +641,7 @@
         "z": "sa_tab",
         "g": "46e19fa9e1cfab74",
         "name": "Craft Request",
-        "func": "msg.url = flow.get(\"gemini_model_url\");\nmsg.url += \"?key=\" + flow.get(\"gemini_api_key\");\n\n// Context\nlet userQuestion = msg.payload;\n\nif (!userQuestion || userQuestion.toString().trim() === \"\") {\n    return null;\n}\n\nmsg.payload = {\n    contents: [\n        {\n            parts: [\n                { \n                    text: `Context: ${flow.get(\"gemini_prompt\")}\n                        Air Temperature = ${flow.get('dht_temp') }\n                        Air Humidity = ${flow.get('dht_hum') }\n                        \n                        User Question: ${userQuestion}`\n                }\n            ]\n        }\n    ]\n};\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
+        "func": "msg.url = flow.get(\"gemini_model_url\");\nmsg.url += \"?key=\" + flow.get(\"gemini_api_key\");\n\n// Context\nlet userQuestion = msg.payload;\n\nif (!userQuestion || userQuestion.toString().trim() === \"\") {\n    return null;\n}\n\nmsg.payload = {\n    contents: [\n        {\n            parts: [\n                { \n                    text: `Context: ${flow.get(\"gemini_prompt\")}\n                        Air Temperature = ${flow.get('dht_temp') }\n                        Air Humidity = ${flow.get('dht_hum') }\n\n                        Soil Moisture = ${flow.get('soil_moisture') }\n                        \n                        User Question: ${userQuestion}`\n                }\n            ]\n        }\n    ]\n};\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -860,30 +863,12 @@
         ]
     },
     {
-        "id": "d87abe35d2b8a19c",
-        "type": "debug",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Debug DHT",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 790,
-        "y": 980,
-        "wires": []
-    },
-    {
         "id": "85352bb9d4f0f71d",
         "type": "function",
         "z": "sa_tab",
         "g": "1558298feb7ccfbe",
         "name": "Set DHT Data",
-        "func": "flow.set(\"dht_temp\", msg.payload.temp);\nflow.set(\"dht_hum\", msg.payload.hum);",
+        "func": "flow.set(\"dht_temp\", msg.payload.temp);\nflow.set(\"dht_hum\", msg.payload.hum);\nflow.set(\"soil_moisture\", msg.payload.sm);",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -922,7 +907,7 @@
         "z": "sa_tab",
         "g": "1558298feb7ccfbe",
         "name": "DHT",
-        "info": "Thong tin duoc gui toi tu ESP moi 2s duoc luu vao Flow\n\nTemp -> dht_temp\n\nHum -> dht_hum\n\nCach goi: flow.get(\"dht_temp\")",
+        "info": "Thong tin duoc gui toi tu ESP moi 2s duoc luu vao Flow\n\nTemp -> dht_temp\n\nHum -> dht_hum\n\nSM -> soil_moisture\n\nCach goi: flow.get(\"dht_temp\")",
         "x": 170,
         "y": 800,
         "wires": []
@@ -1032,11 +1017,134 @@
         ]
     },
     {
+        "id": "53d0c06bc3a8bb39",
+        "type": "mqtt in",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Soil Moisture",
+        "topic": "senda-farm/dht/soil_moisture",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6eaf401a93ae6f4e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 1060,
+        "wires": [
+            [
+                "5e9942b924a44548",
+                "5b40d0b8ab6acbe3"
+            ]
+        ]
+    },
+    {
+        "id": "5e9942b924a44548",
+        "type": "ui-gauge",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Soil Moisture",
+        "group": "17af2483ca06839b",
+        "order": 4,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 2,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Độ ẩm đất",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "%",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "value"
+            },
+            {
+                "from": "30",
+                "color": "#7ab4ff",
+                "text": "",
+                "textType": "value"
+            },
+            {
+                "from": "70",
+                "color": "#006eff",
+                "text": "",
+                "textType": "value"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 390,
+        "y": 1060,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b40d0b8ab6acbe3",
+        "type": "change",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "sm",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 1020,
+        "wires": [
+            [
+                "76a1c9863f59da9c"
+            ]
+        ]
+    },
+    {
+        "id": "7b059dcfc97635e0",
+        "type": "debug",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 980,
+        "wires": []
+    },
+    {
         "id": "17af2483ca06839b",
         "type": "ui-group",
-        "name": "DHT",
+        "name": "Monitors",
         "page": "227ad96d7188d768",
-        "width": 4,
+        "width": 7,
         "height": "3",
         "order": 1,
         "showTitle": true,
@@ -1195,7 +1303,7 @@
         }
     },
     {
-        "id": "b4f772dc77fd9d5a",
+        "id": "69ecc78e1033b7da",
         "type": "global-config",
         "env": [],
         "modules": {

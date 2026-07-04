@@ -79,18 +79,17 @@ void connectMQTT() {
    Serial.println("[MQTT] Connected");
 }
 
+String LCD_DISPLAY_MODE = "DHT"; // "DHT" or "SMS" 
+
 void callback(char *Topic, byte *Payload, unsigned int Length) {
    String msg = "";
    for (int i = 0; i < Length; i++) msg += (char)Payload[i];
 
-   Serial.println("Topic: " + String(Topic));
+   Serial.println("Topic  : " + String(Topic));
    Serial.println("Message: " + String(msg));
 
-   if (String(Topic) == "senda-farm/output/led" and msg == "true") digitalWrite(LED_PIN, 1);
-   else if (msg == "false") digitalWrite(LED_PIN, 0);
+   if (String(Topic) == "senda-farm/output/led" and msg == "true") digitalWrite(LED, 1);
+   else if (msg == "false") digitalWrite(LED, 0);
 
-   if (String(Topic) == "senda-farm/output/lcd") {
-      // TODO: Doi Mode cua LCD 
-      Serial.println("LCD");
-   }
+   if (String(Topic) == "senda-farm/output/lcd") LCD_DISPLAY_MODE = msg;
 }

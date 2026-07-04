@@ -538,7 +538,7 @@
         "name": "User Ask",
         "label": "Ask Bot",
         "order": 1,
-        "width": 0,
+        "width": 5,
         "height": 0,
         "topic": "payload",
         "topicType": "msg",
@@ -569,9 +569,9 @@
         "z": "sa_tab",
         "g": "46e19fa9e1cfab74",
         "group": "6e58a779fc4eff0a",
-        "order": 3,
-        "width": 0,
-        "height": 2,
+        "order": 2,
+        "width": 5,
+        "height": 4,
         "name": "Chat Reply",
         "label": "Reply",
         "format": "{{msg.payload}}",
@@ -680,7 +680,7 @@
             },
             {
                 "label": "Trong Đất",
-                "value": "CSMS",
+                "value": "SMS",
                 "type": "str"
             }
         ],
@@ -1204,7 +1204,7 @@
         "type": "ui-group",
         "name": "Chat Bot",
         "page": "227ad96d7188d768",
-        "width": 2,
+        "width": 4,
         "height": "6",
         "order": 3,
         "showTitle": true,
@@ -1303,7 +1303,7 @@
         }
     },
     {
-        "id": "69ecc78e1033b7da",
+        "id": "67ec2c2e363bbdbd",
         "type": "global-config",
         "env": [],
         "modules": {

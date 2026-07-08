@@ -29,12 +29,12 @@ SMS -> LCD
 */
 
 const int PEAK_AIR_VALUE = 4095; // VALUE IN AIR
-const int PEAK_WET_VALUE = 2000; // VALUE IN WATER
+const int PEAK_WET_VALUE = 2500; // VALUE IN WATER
 
-int getSoilMoisturePercentage() {
+float getSoilMoisturePercentage() {
    int rawData = analogRead(SMS);
 
-   int moisture = map(rawData, PEAK_AIR_VALUE, PEAK_WET_VALUE, 0, 100);
+   float moisture = map(rawData, PEAK_AIR_VALUE, PEAK_WET_VALUE, 0, 100);
    moisture = constrain(moisture, 0, 100);
 
    return moisture;

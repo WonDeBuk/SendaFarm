@@ -3,14 +3,12 @@
 #include "lib.h"
 
 /* WIFI: [Nên dung 2.4Ghz, WPA2-Personal] */
-const char *SSID = "esp32";
-const char *PASSWORD = "12345678";
+const char *SSID = "[MMT] Test LAN";
+const char *PASSWORD = "myalohaa";
 
 void connectWifi() {
-   if (DEBUGGING_MODE_IS_ON) {
-      Serial.print("[WIFI] Connecting to ");
-      Serial.println(SSID);      
-   }
+   Serial.print("[WIFI] Connecting to ");
+   Serial.println(SSID);      
 
    WiFi.begin(SSID, PASSWORD);
    delay(1000);
@@ -24,10 +22,8 @@ void connectWifi() {
 
    Serial.println("[WIFI] Connected");
 
-   if (DEBUGGING_MODE_IS_ON) {
-      Serial.print("IP Address: ");
-      Serial.println(WiFi.localIP());      
-   }
+   Serial.print("IP Address: ");
+   Serial.println(WiFi.localIP());      
 }
 
 void showAvailableNetworks() {

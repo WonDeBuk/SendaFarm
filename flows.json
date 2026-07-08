@@ -135,6 +135,207 @@
         "h": 202
     },
     {
+        "id": "c70a3beadd96d549",
+        "type": "group",
+        "z": "sa_tab",
+        "name": "",
+        "style": {
+            "fill": "#dbcbe7",
+            "label": true,
+            "stroke": "#777777",
+            "fill-opacity": "0.5"
+        },
+        "nodes": [
+            "d704aedf8b1f64c8",
+            "b2c75727ed70914b",
+            "85fc9f348892d8d2",
+            "f0ea2dfd18d40cc1",
+            "99e3df4db5fbbc09",
+            "92fb6e536be940af",
+            "ca97214bf8c94dbf",
+            "309c531fb7b2215f",
+            "0476865ce71b1b11",
+            "faada6b133075b91",
+            "9316dc4e81399882"
+        ],
+        "x": 974,
+        "y": 759,
+        "w": 952,
+        "h": 202
+    },
+    {
+        "id": "6d5a392f976844f3",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "a10a508b7852b0ba",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "8f9f922bf37199ce",
+        "type": "ui-theme",
+        "name": "Light",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "67ec2c2e363bbdbd",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-node-email": "5.2.4"
+        }
+    },
+    {
+        "id": "6eaf401a93ae6f4e",
+        "type": "mqtt-broker",
+        "name": "HiveMQBroker",
+        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "6d5a392f976844f3",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": "15",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "227ad96d7188d768",
+        "type": "ui-page",
+        "name": "Senda Farm",
+        "ui": "a10a508b7852b0ba",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "8f9f922bf37199ce",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "17af2483ca06839b",
+        "type": "ui-group",
+        "name": "Monitors",
+        "page": "227ad96d7188d768",
+        "width": 7,
+        "height": "3",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7f3df657b3c135ff",
+        "type": "ui-group",
+        "name": "Output",
+        "page": "227ad96d7188d768",
+        "width": "2",
+        "height": "3",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6e58a779fc4eff0a",
+        "type": "ui-group",
+        "name": "Chat Bot",
+        "page": "227ad96d7188d768",
+        "width": 4,
+        "height": "6",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
         "id": "0d07dbc9973e4c4a",
         "type": "ui-gauge",
         "z": "sa_tab",
@@ -364,7 +565,7 @@
         "joiner": "\\n",
         "joinerType": "str",
         "useparts": false,
-        "accumulate": true,
+        "accumulate": false,
         "timeout": "",
         "count": "3",
         "reduceRight": false,
@@ -372,12 +573,13 @@
         "reduceInit": "",
         "reduceInitType": "num",
         "reduceFixup": "",
-        "x": 580,
+        "x": 570,
         "y": 920,
         "wires": [
             [
                 "85352bb9d4f0f71d",
-                "7b059dcfc97635e0"
+                "7b059dcfc97635e0",
+                "99e3df4db5fbbc09"
             ]
         ]
     },
@@ -876,7 +1078,7 @@
         "finalize": "",
         "libs": [],
         "x": 800,
-        "y": 920,
+        "y": 840,
         "wires": [
             []
         ]
@@ -1132,183 +1334,386 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 780,
-        "y": 980,
+        "y": 1020,
         "wires": []
     },
     {
-        "id": "17af2483ca06839b",
-        "type": "ui-group",
-        "name": "Monitors",
-        "page": "227ad96d7188d768",
-        "width": 7,
-        "height": "3",
-        "order": 1,
-        "showTitle": true,
+        "id": "d704aedf8b1f64c8",
+        "type": "ui-chart",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "group": "17af2483ca06839b",
+        "name": "Temp",
+        "label": "Temperature Chart",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "Nhiệt độ",
+        "categoryType": "str",
+        "xAxisLabel": "",
+        "xAxisProperty": "payload.created_at",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload.temp",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "50",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
         "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
+        "interpolation": "linear",
+        "x": 1810,
+        "y": 800,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "6eaf401a93ae6f4e",
-        "type": "mqtt-broker",
-        "name": "HiveMQBroker",
-        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
-        "port": "8883",
-        "tls": "6d5a392f976844f3",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": 4,
-        "keepalive": "15",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "7f3df657b3c135ff",
-        "type": "ui-group",
-        "name": "Output",
-        "page": "227ad96d7188d768",
-        "width": "2",
-        "height": "3",
-        "order": 2,
-        "showTitle": true,
+        "id": "b2c75727ed70914b",
+        "type": "ui-chart",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "group": "17af2483ca06839b",
+        "name": "Hum",
+        "label": "Humidity Chart",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "Độ ẩm không khí",
+        "categoryType": "str",
+        "xAxisLabel": "",
+        "xAxisProperty": "payload.created_at",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload.hum",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
         "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
+        "interpolation": "linear",
+        "x": 1810,
+        "y": 860,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "6e58a779fc4eff0a",
-        "type": "ui-group",
-        "name": "Chat Bot",
-        "page": "227ad96d7188d768",
-        "width": 4,
-        "height": "6",
-        "order": 3,
-        "showTitle": true,
+        "id": "85fc9f348892d8d2",
+        "type": "ui-chart",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "group": "17af2483ca06839b",
+        "name": "Soil Moisture",
+        "label": "Soil Moisture Chart",
+        "order": 9007199254740991,
+        "chartType": "line",
+        "category": "Độ ẩm đất",
+        "categoryType": "str",
+        "xAxisLabel": "",
+        "xAxisProperty": "payload.created_at",
+        "xAxisPropertyType": "msg",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload.sm",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": true,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 8,
         "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
+        "interpolation": "linear",
+        "x": 1830,
+        "y": 920,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "227ad96d7188d768",
-        "type": "ui-page",
-        "name": "Senda Farm",
+        "id": "f0ea2dfd18d40cc1",
+        "type": "http request",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Store Request",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1380,
+        "y": 920,
+        "wires": [
+            [
+                "faada6b133075b91"
+            ]
+        ]
+    },
+    {
+        "id": "99e3df4db5fbbc09",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Store Trigger",
+        "func": "msg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data\"\n\n// Cấu hình các Headers bắt buộc của Supabase\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Content-Type\": \"application/json\",\n    \"Prefer\": \"return=representation\" // Yêu cầu trả về data sau khi insert thành công (tùy chọn)\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1110,
+        "y": 920,
+        "wires": [
+            [
+                "f0ea2dfd18d40cc1"
+            ]
+        ]
+    },
+    {
+        "id": "92fb6e536be940af",
+        "type": "ui-control",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Mount Trigger",
         "ui": "a10a508b7852b0ba",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "8f9f922bf37199ce",
-        "breakpoints": [
+        "events": "connect",
+        "x": 1080,
+        "y": 800,
+        "wires": [
+            [
+                "ca97214bf8c94dbf",
+                "9316dc4e81399882"
+            ]
+        ]
+    },
+    {
+        "id": "ca97214bf8c94dbf",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "1 Hour Query",
+        "func": "// 1. Tính mốc thời gian cách đây 1 tiếng (chuẩn ISO)\nlet oneHourAgo = new Date(Date.now() - 3600000).toISOString();\n\n// 2. Tạo URL lấy dữ liệu bảng Data\n// Lưu ý: Dùng order=created_at.asc để dữ liệu sắp xếp từ cũ tới mới, \n// giúp biểu đồ vẽ đúng chiều từ trái qua phải.\nmsg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data?select=*&created_at=gte.\" + oneHourAgo + \"&order=created_at.asc\";\n\n// 3. Cấu hình Headers (Thay API Key của bạn vào)\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\"\n};\n\n// 4. Xóa payload rác sinh ra từ node ui control để tránh gây lỗi HTTP Request\nmsg.payload = {};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 800,
+        "wires": [
+            [
+                "309c531fb7b2215f"
+            ]
+        ]
+    },
+    {
+        "id": "309c531fb7b2215f",
+        "type": "http request",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1450,
+        "y": 800,
+        "wires": [
+            [
+                "0476865ce71b1b11"
+            ]
+        ]
+    },
+    {
+        "id": "0476865ce71b1b11",
+        "type": "split",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Spliter",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "property": "payload",
+        "x": 1610,
+        "y": 800,
+        "wires": [
+            [
+                "d704aedf8b1f64c8",
+                "b2c75727ed70914b",
+                "85fc9f348892d8d2"
+            ]
+        ]
+    },
+    {
+        "id": "faada6b133075b91",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Sparser",
+        "func": "msg.payload = msg.payload[0];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 920,
+        "wires": [
+            [
+                "d704aedf8b1f64c8",
+                "b2c75727ed70914b",
+                "85fc9f348892d8d2"
+            ]
+        ]
+    },
+    {
+        "id": "9316dc4e81399882",
+        "type": "change",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "Clear",
+        "rules": [
             {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "[]",
+                "tot": "json"
             }
         ],
-        "order": 1,
-        "className": "",
-        "visible": true,
-        "disabled": false
-    },
-    {
-        "id": "6d5a392f976844f3",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": true,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "a10a508b7852b0ba",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
-        "id": "8f9f922bf37199ce",
-        "type": "ui-theme",
-        "name": "Light",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "67ec2c2e363bbdbd",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "@flowfuse/node-red-dashboard": "1.30.2",
-            "node-red-node-email": "5.2.4"
-        }
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1550,
+        "y": 860,
+        "wires": [
+            [
+                "d704aedf8b1f64c8",
+                "b2c75727ed70914b",
+                "85fc9f348892d8d2"
+            ]
+        ]
     }
 ]

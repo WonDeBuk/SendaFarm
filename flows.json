@@ -44,19 +44,16 @@
             "512131535b8a6e38",
             "dcc7cabcd06e2fa4",
             "69c7b1efcd518915",
-            "76a1c9863f59da9c",
-            "c9c9e003c91405b1",
-            "5fba2043bd4d70a5",
-            "85352bb9d4f0f71d",
             "5d307a8588cefc35",
             "53d0c06bc3a8bb39",
             "5e9942b924a44548",
-            "5b40d0b8ab6acbe3",
-            "7b059dcfc97635e0"
+            "935ae511520baacc",
+            "ef072d0a7bc7657d",
+            "7c35b25689097af7"
         ],
         "x": 94,
-        "y": 759,
-        "w": 812,
+        "y": 519,
+        "w": 392,
         "h": 342
     },
     {
@@ -105,11 +102,12 @@
             "309c531fb7b2215f",
             "0476865ce71b1b11",
             "faada6b133075b91",
-            "9316dc4e81399882"
+            "9316dc4e81399882",
+            "8b2dbb3df166edf2"
         ],
-        "x": 974,
-        "y": 759,
-        "w": 952,
+        "x": 514,
+        "y": 519,
+        "w": 972,
         "h": 202
     },
     {
@@ -299,6 +297,56 @@
         "groupType": "default"
     },
     {
+        "id": "fbc266363e8f5f14",
+        "type": "ui-spacer",
+        "group": "7f3df657b3c135ff",
+        "name": "spacer",
+        "order": 1,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc271fe751ae45c",
+        "type": "ui-spacer",
+        "group": "7f3df657b3c135ff",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc2814f7af5fda7",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 1,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc287594cc97fd6",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "fbc2851c6c23514b",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
         "id": "0d07dbc9973e4c4a",
         "type": "ui-gauge",
         "z": "sa_tab",
@@ -354,7 +402,7 @@
         "styleGlow": false,
         "className": "",
         "x": 370,
-        "y": 860,
+        "y": 620,
         "wires": [
             []
         ]
@@ -374,11 +422,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 180,
-        "y": 860,
+        "y": 620,
         "wires": [
             [
                 "0d07dbc9973e4c4a",
-                "c9c9e003c91405b1"
+                "935ae511520baacc"
             ]
         ]
     },
@@ -451,7 +499,7 @@
         "styleGlow": false,
         "className": "",
         "x": 370,
-        "y": 980,
+        "y": 700,
         "wires": [
             []
         ]
@@ -506,99 +554,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 180,
-        "y": 980,
+        "y": 700,
         "wires": [
             [
                 "dcc7cabcd06e2fa4",
-                "5fba2043bd4d70a5"
-            ]
-        ]
-    },
-    {
-        "id": "76a1c9863f59da9c",
-        "type": "join",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Data",
-        "mode": "custom",
-        "build": "object",
-        "property": "payload",
-        "propertyType": "msg",
-        "key": "topic",
-        "joiner": "\\n",
-        "joinerType": "str",
-        "useparts": false,
-        "accumulate": false,
-        "timeout": "",
-        "count": "3",
-        "reduceRight": false,
-        "reduceExp": "",
-        "reduceInit": "",
-        "reduceInitType": "num",
-        "reduceFixup": "",
-        "x": 570,
-        "y": 920,
-        "wires": [
-            [
-                "85352bb9d4f0f71d",
-                "7b059dcfc97635e0",
-                "99e3df4db5fbbc09"
-            ]
-        ]
-    },
-    {
-        "id": "c9c9e003c91405b1",
-        "type": "change",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Change",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "temp",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 900,
-        "wires": [
-            [
-                "76a1c9863f59da9c"
-            ]
-        ]
-    },
-    {
-        "id": "5fba2043bd4d70a5",
-        "type": "change",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Change",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "hum",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 940,
-        "wires": [
-            [
-                "76a1c9863f59da9c"
+                "ef072d0a7bc7657d"
             ]
         ]
     },
@@ -626,7 +586,7 @@
         "z": "sa_tab",
         "g": "398014290f26b1a5",
         "name": "Craft Email",
-        "func": "const temp = flow.get(\"dht_temp\");\nconst hum = flow.get(\"dht_hum\");\nconst email = flow.get(\"email\");\n\nif (!email || email.toString().trim() === \"\" || (!temp && !hum)) return null;\nelse msg.to = email;\n\nif (temp < 40 && hum < 80) return null;\n\nif (temp > 40 && hum > 80) {\n    msg.topic = \"⚠️ Cảnh báo nhiệt độ & độ ẩm\";\n    msg.payload = \"Nhiệt độ cao: \" + temp + \"°C\\nĐộ ẩm cao: \" + hum + \"%\";\n}\n\nif (temp > 40) {\n    msg.topic = \"⚠️ Cảnh báo nhiệt độ\";\n    msg.payload = \"Nhiệt độ cao: \" + temp + \"°C\";\n}\n\nif (hum > 80) {\n    msg.topic = \"💧 Cảnh báo độ ẩm\";\n    msg.payload = \"Độ ẩm cao: \" + hum + \"%\";\n}\n\nreturn msg;",
+        "func": "const temp = flow.get(\"dht_temp\");\nconst hum = flow.get(\"dht_hum\");\nconst sm = flow.get(\"soil_moisture\");\nconst email = flow.get(\"email\");\n\nif (!email || email.toString().trim() === \"\" || (!temp && !hum && !sm)) return null;\nelse msg.to = email;\n\nif (temp < 40 && hum < 80) return null;\n\nif (sm > 30) {\n    msg.topic = \"⚠️ Cảnh báo độ ẩm đất\";\n    msg.payload = \"Độ ẩm đất cao: \" + sm + \"%\";\n}\n\n\nif (temp > 30) {\n    msg.topic = \"⚠️ Cảnh báo nhiệt độ\";\n    msg.payload = \"Nhiệt độ cao: \" + temp + \"°C\";\n}\n\nif (hum > 80) {\n    msg.topic = \"💧 Cảnh báo độ ẩm\";\n    msg.payload = \"Độ ẩm cao: \" + hum + \"%\";\n}\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -756,25 +716,6 @@
         "wires": []
     },
     {
-        "id": "85352bb9d4f0f71d",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Set DHT Data",
-        "func": "flow.set(\"dht_temp\", msg.payload.temp);\nflow.set(\"dht_hum\", msg.payload.hum);\nflow.set(\"soil_moisture\", msg.payload.sm);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 800,
-        "y": 840,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "3f400484e5020241",
         "type": "inject",
         "z": "sa_tab",
@@ -799,10 +740,10 @@
         "type": "comment",
         "z": "sa_tab",
         "g": "1558298feb7ccfbe",
-        "name": "DHT",
+        "name": "Sensors",
         "info": "Thong tin duoc gui toi tu ESP moi 2s duoc luu vao Flow\n\nTemp -> dht_temp\n\nHum -> dht_hum\n\nSM -> soil_moisture\n\nCach goi: flow.get(\"dht_temp\")",
-        "x": 170,
-        "y": 800,
+        "x": 180,
+        "y": 560,
         "wires": []
     },
     {
@@ -868,11 +809,11 @@
         "rh": 0,
         "inputs": 0,
         "x": 190,
-        "y": 1060,
+        "y": 780,
         "wires": [
             [
                 "5e9942b924a44548",
-                "5b40d0b8ab6acbe3"
+                "7c35b25689097af7"
             ]
         ]
     },
@@ -926,56 +867,10 @@
         "styleGlow": false,
         "className": "",
         "x": 390,
-        "y": 1060,
+        "y": 780,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "5b40d0b8ab6acbe3",
-        "type": "change",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "Change",
-        "rules": [
-            {
-                "t": "set",
-                "p": "topic",
-                "pt": "msg",
-                "to": "sm",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 380,
-        "y": 1020,
-        "wires": [
-            [
-                "76a1c9863f59da9c"
-            ]
-        ]
-    },
-    {
-        "id": "7b059dcfc97635e0",
-        "type": "debug",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
-        "name": "debug 1",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 780,
-        "y": 1020,
-        "wires": []
     },
     {
         "id": "d704aedf8b1f64c8",
@@ -1034,8 +929,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1810,
-        "y": 800,
+        "x": 1370,
+        "y": 560,
         "wires": [
             []
         ]
@@ -1097,8 +992,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1810,
-        "y": 860,
+        "x": 1370,
+        "y": 620,
         "wires": [
             []
         ]
@@ -1160,8 +1055,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1830,
-        "y": 920,
+        "x": 1390,
+        "y": 680,
         "wires": [
             []
         ]
@@ -1183,8 +1078,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1380,
-        "y": 920,
+        "x": 1000,
+        "y": 680,
         "wires": [
             [
                 "faada6b133075b91"
@@ -1197,15 +1092,15 @@
         "z": "sa_tab",
         "g": "c70a3beadd96d549",
         "name": "Store Trigger",
-        "func": "msg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data\"\n\n// Cấu hình các Headers bắt buộc của Supabase\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Content-Type\": \"application/json\",\n    \"Prefer\": \"return=representation\" // Yêu cầu trả về data sau khi insert thành công (tùy chọn)\n};\n\nreturn msg;",
+        "func": "msg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data\"\nmsg.payload = {\n    temp: flow.get(\"dht_temp\"),\n    hum: flow.get(\"dht_hum\"),\n    sm: flow.get(\"soil_moisture\")\n};\n\n\n// Cấu hình các Headers bắt buộc của Supabase\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Content-Type\": \"application/json\",\n    \"Prefer\": \"return=representation\" // Yêu cầu trả về data sau khi insert thành công (tùy chọn)\n};\n\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1110,
-        "y": 920,
+        "x": 790,
+        "y": 680,
         "wires": [
             [
                 "f0ea2dfd18d40cc1"
@@ -1220,8 +1115,8 @@
         "name": "Mount Trigger",
         "ui": "a10a508b7852b0ba",
         "events": "connect",
-        "x": 1080,
-        "y": 800,
+        "x": 640,
+        "y": 560,
         "wires": [
             [
                 "ca97214bf8c94dbf",
@@ -1242,8 +1137,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1260,
-        "y": 800,
+        "x": 820,
+        "y": 560,
         "wires": [
             [
                 "309c531fb7b2215f"
@@ -1267,8 +1162,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1450,
-        "y": 800,
+        "x": 1010,
+        "y": 560,
         "wires": [
             [
                 "0476865ce71b1b11"
@@ -1288,8 +1183,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 1610,
-        "y": 800,
+        "x": 1170,
+        "y": 560,
         "wires": [
             [
                 "d704aedf8b1f64c8",
@@ -1311,8 +1206,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1600,
-        "y": 920,
+        "x": 1160,
+        "y": 680,
         "wires": [
             [
                 "d704aedf8b1f64c8",
@@ -1341,8 +1236,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1550,
-        "y": 860,
+        "x": 1110,
+        "y": 620,
         "wires": [
             [
                 "d704aedf8b1f64c8",
@@ -1352,53 +1247,80 @@
         ]
     },
     {
-        "id": "fbc266363e8f5f14",
-        "type": "ui-spacer",
-        "group": "7f3df657b3c135ff",
-        "name": "spacer",
-        "order": 1,
-        "width": 1,
-        "height": 3,
-        "className": ""
+        "id": "8b2dbb3df166edf2",
+        "type": "inject",
+        "z": "sa_tab",
+        "g": "c70a3beadd96d549",
+        "name": "5s Timer",
+        "props": [],
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 620,
+        "y": 680,
+        "wires": [
+            [
+                "99e3df4db5fbbc09"
+            ]
+        ]
     },
     {
-        "id": "fbc271fe751ae45c",
-        "type": "ui-spacer",
-        "group": "7f3df657b3c135ff",
-        "name": "spacer",
-        "order": 3,
-        "width": 1,
-        "height": 3,
-        "className": ""
+        "id": "935ae511520baacc",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Set Temp",
+        "func": "flow.set(\"dht_temp\", msg.payload ?? 0);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 660,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "fbc2814f7af5fda7",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 1,
-        "width": 1,
-        "height": 3,
-        "className": ""
+        "id": "ef072d0a7bc7657d",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Set Hum",
+        "func": "flow.set(\"dht_hum\", msg.payload ?? 0);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 740,
+        "wires": [
+            []
+        ]
     },
     {
-        "id": "fbc287594cc97fd6",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 2,
-        "width": 4,
-        "height": 1,
-        "className": ""
-    },
-    {
-        "id": "fbc2851c6c23514b",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 3,
-        "width": 1,
-        "height": 3,
-        "className": ""
+        "id": "7c35b25689097af7",
+        "type": "function",
+        "z": "sa_tab",
+        "g": "1558298feb7ccfbe",
+        "name": "Set SM",
+        "func": "flow.set(\"soil_moisture\", msg.payload ?? 0);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 820,
+        "wires": [
+            []
+        ]
     }
 ]

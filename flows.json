@@ -60,57 +60,6 @@
         "h": 342
     },
     {
-        "id": "46e19fa9e1cfab74",
-        "type": "group",
-        "z": "sa_tab",
-        "name": "",
-        "style": {
-            "fill": "#7fb7df",
-            "fill-opacity": "0.36",
-            "label": true
-        },
-        "nodes": [
-            "8bdae92b448fe413",
-            "e08bc413ab2948b2",
-            "dd9afbc8c0c8b289",
-            "7d50341a644f40c2",
-            "a9c0545579f99e4e",
-            "f1ede0c029eb9510",
-            "3d530e23ac9dc5e7",
-            "cf244afa5b4f5927"
-        ],
-        "x": 94,
-        "y": 519,
-        "w": 832,
-        "h": 222
-    },
-    {
-        "id": "df9c280d228d6828",
-        "type": "group",
-        "z": "sa_tab",
-        "name": "",
-        "style": {
-            "stroke": "#777777",
-            "stroke-opacity": "0.95",
-            "label": true,
-            "fill": "#ff7f7f",
-            "fill-opacity": "0.27"
-        },
-        "nodes": [
-            "3c24561acf8562bd",
-            "b34eb9747623d0d8",
-            "ec90c88f9a16e1ff",
-            "b58e4aba87efb705",
-            "84a2dc23bae99a20",
-            "3ba255e3ac7cf42d",
-            "16f554af71a2fa84"
-        ],
-        "x": 454,
-        "y": 59,
-        "w": 412,
-        "h": 222
-    },
-    {
         "id": "398014290f26b1a5",
         "type": "group",
         "z": "sa_tab",
@@ -190,7 +139,7 @@
         ],
         "showPathInSidebar": false,
         "headerContent": "page",
-        "navigationStyle": "default",
+        "navigationStyle": "none",
         "titleBarStyle": "default",
         "showReconnectNotification": true,
         "notificationDisplayTime": 1,
@@ -298,7 +247,7 @@
         "type": "ui-group",
         "name": "Monitors",
         "page": "227ad96d7188d768",
-        "width": 7,
+        "width": 12,
         "height": "3",
         "order": 1,
         "showTitle": true,
@@ -312,8 +261,22 @@
         "type": "ui-group",
         "name": "Output",
         "page": "227ad96d7188d768",
-        "width": "2",
+        "width": 6,
         "height": "3",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "02b8af795e4e1738",
+        "type": "ui-group",
+        "name": "Chart",
+        "page": "227ad96d7188d768",
+        "width": "12",
+        "height": "6",
         "order": 2,
         "showTitle": true,
         "className": "",
@@ -322,13 +285,13 @@
         "groupType": "default"
     },
     {
-        "id": "6e58a779fc4eff0a",
+        "id": "247461c6e194fa85",
         "type": "ui-group",
-        "name": "Chat Bot",
+        "name": "Email",
         "page": "227ad96d7188d768",
-        "width": 4,
-        "height": "6",
-        "order": 3,
+        "width": 6,
+        "height": 1,
+        "order": 4,
         "showTitle": true,
         "className": "",
         "visible": "true",
@@ -345,7 +308,7 @@
         "order": 1,
         "value": "payload",
         "valueType": "msg",
-        "width": 2,
+        "width": 4,
         "height": 3,
         "gtype": "gauge-half",
         "gstyle": "needle",
@@ -448,7 +411,7 @@
         "order": 2,
         "value": "payload",
         "valueType": "msg",
-        "width": 2,
+        "width": 4,
         "height": 3,
         "gtype": "gauge-half",
         "gstyle": "needle",
@@ -501,9 +464,9 @@
         "name": "Switch",
         "label": "LED",
         "group": "7f3df657b3c135ff",
-        "order": 4,
-        "width": 1,
-        "height": 2,
+        "order": 2,
+        "width": 4,
+        "height": 1,
         "passthru": false,
         "decouple": false,
         "topic": "topic",
@@ -702,12 +665,12 @@
         "type": "ui-text-input",
         "z": "sa_tab",
         "g": "398014290f26b1a5",
-        "group": "7f3df657b3c135ff",
+        "group": "247461c6e194fa85",
         "name": "User Email",
         "label": "Email",
-        "order": 1,
-        "width": 0,
-        "height": 0,
+        "order": 4,
+        "width": 4,
+        "height": 1,
         "topic": "topic",
         "topicType": "msg",
         "mode": "text",
@@ -732,133 +695,6 @@
         ]
     },
     {
-        "id": "8bdae92b448fe413",
-        "type": "ui-text-input",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "group": "6e58a779fc4eff0a",
-        "name": "User Ask",
-        "label": "Ask Bot",
-        "order": 1,
-        "width": 5,
-        "height": 0,
-        "topic": "payload",
-        "topicType": "msg",
-        "mode": "text",
-        "tooltip": "Ask any  questions!!! (plz be simple)",
-        "delay": 300,
-        "passthru": true,
-        "sendOnDelay": false,
-        "sendOnBlur": false,
-        "sendOnEnter": true,
-        "className": "",
-        "clearable": false,
-        "sendOnClear": false,
-        "icon": "",
-        "iconPosition": "left",
-        "iconInnerPosition": "inside",
-        "x": 180,
-        "y": 620,
-        "wires": [
-            [
-                "3d530e23ac9dc5e7"
-            ]
-        ]
-    },
-    {
-        "id": "e08bc413ab2948b2",
-        "type": "ui-text",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "group": "6e58a779fc4eff0a",
-        "order": 2,
-        "width": 5,
-        "height": 4,
-        "name": "Chat Reply",
-        "label": "Reply",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "style": true,
-        "font": "Century Gothic,CenturyGothic,AppleGothic,sans-serif",
-        "fontSize": "16",
-        "color": "#717171",
-        "wrapText": true,
-        "className": "",
-        "value": "payload",
-        "valueType": "msg",
-        "x": 830,
-        "y": 700,
-        "wires": []
-    },
-    {
-        "id": "dd9afbc8c0c8b289",
-        "type": "http request",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "HTTP Request",
-        "method": "POST",
-        "ret": "obj",
-        "paytoqs": "ignore",
-        "url": "",
-        "tls": "",
-        "persist": false,
-        "proxy": "",
-        "insecureHTTPParser": false,
-        "authType": "",
-        "senderr": false,
-        "headers": [],
-        "x": 420,
-        "y": 700,
-        "wires": [
-            [
-                "7d50341a644f40c2",
-                "f1ede0c029eb9510"
-            ]
-        ]
-    },
-    {
-        "id": "7d50341a644f40c2",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "Craft Response",
-        "func": "// Check if the response contains the expected Gemini data structure\nif (msg.payload && msg.payload.candidates && msg.payload.candidates[0].content) {\n\n    // Map the deep JSON text property directly to msg.payload\n    msg.payload = msg.payload.candidates[0].content.parts[0].text;\n\n} else {\n    // Fallback message in case the API returned something unexpected\n    msg.payload = \"Error: Could not parse response from Gemini.\";\n}\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 700,
-        "wires": [
-            [
-                "e08bc413ab2948b2"
-            ]
-        ]
-    },
-    {
-        "id": "a9c0545579f99e4e",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "Craft Request",
-        "func": "msg.url = flow.get(\"gemini_model_url\");\nmsg.url += \"?key=\" + flow.get(\"gemini_api_key\");\n\n// Context\nlet userQuestion = msg.payload;\n\nif (!userQuestion || userQuestion.toString().trim() === \"\") {\n    return null;\n}\n\nmsg.payload = {\n    contents: [\n        {\n            parts: [\n                { \n                    text: `Context: ${flow.get(\"gemini_prompt\")}\n                        Air Temperature = ${flow.get('dht_temp') }\n                        Air Humidity = ${flow.get('dht_hum') }\n\n                        Soil Moisture = ${flow.get('soil_moisture') }\n                        \n                        User Question: ${userQuestion}`\n                }\n            ]\n        }\n    ]\n};\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\n\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 220,
-        "y": 700,
-        "wires": [
-            [
-                "dd9afbc8c0c8b289"
-            ]
-        ]
-    },
-    {
         "id": "f11b914e190b75b0",
         "type": "ui-dropdown",
         "z": "sa_tab",
@@ -867,8 +703,8 @@
         "name": "Options",
         "label": "LCD Display:",
         "tooltip": "",
-        "order": 2,
-        "width": 0,
+        "order": 4,
+        "width": 4,
         "height": 1,
         "passthru": false,
         "multiple": false,
@@ -920,151 +756,6 @@
         "wires": []
     },
     {
-        "id": "f1ede0c029eb9510",
-        "type": "debug",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "HTTP Request",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 640,
-        "y": 620,
-        "wires": []
-    },
-    {
-        "id": "3d530e23ac9dc5e7",
-        "type": "delay",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "1 msg / 15s",
-        "pauseType": "rate",
-        "timeout": "10",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "15",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": true,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 370,
-        "y": 620,
-        "wires": [
-            [
-                "a9c0545579f99e4e"
-            ]
-        ]
-    },
-    {
-        "id": "3c24561acf8562bd",
-        "type": "inject",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Gemini API Key",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "AQ.Ab8RN6KeftJwc7DWfuHyrYBtYSEgl4kw4V0hFC6-4GWbMJF5gg",
-        "payloadType": "str",
-        "x": 580,
-        "y": 200,
-        "wires": [
-            [
-                "ec90c88f9a16e1ff"
-            ]
-        ]
-    },
-    {
-        "id": "b34eb9747623d0d8",
-        "type": "comment",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "CHATBOT SETUP",
-        "info": "Thay doi trong node inject\n\nGemini Model -> HTTP url (tuy chinh model tai day, hien dang su dung FlashLite)\n\nGemini Prompt -> Context cua moi request (format,...)\n\nGemini API Key -> Thay api key vao day",
-        "x": 570,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "ec90c88f9a16e1ff",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Set API Key",
-        "func": "flow.set(\"gemini_api_key\", msg.payload);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 770,
-        "y": 200,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b58e4aba87efb705",
-        "type": "inject",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Gemini Prompt",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "Succulent farm, only answer simple relevant questions about our farm. answer with datas available at hands, short and precise, answer in block of text, no emojis",
-        "payloadType": "str",
-        "x": 580,
-        "y": 240,
-        "wires": [
-            [
-                "84a2dc23bae99a20"
-            ]
-        ]
-    },
-    {
-        "id": "84a2dc23bae99a20",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Set Prompt",
-        "func": "flow.set(\"gemini_prompt\", msg.payload);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 770,
-        "y": 240,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "85352bb9d4f0f71d",
         "type": "function",
         "z": "sa_tab",
@@ -1113,62 +804,6 @@
         "x": 170,
         "y": 800,
         "wires": []
-    },
-    {
-        "id": "cf244afa5b4f5927",
-        "type": "comment",
-        "z": "sa_tab",
-        "g": "46e19fa9e1cfab74",
-        "name": "CHATBOT",
-        "info": "HTTP REQUEST \n 1. prompt\n 2. DHT data\n 3. User Question",
-        "x": 180,
-        "y": 560,
-        "wires": []
-    },
-    {
-        "id": "3ba255e3ac7cf42d",
-        "type": "inject",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Gemini Model",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "https://generativelanguage.googleapis.com/v1/models/gemini-3.1-flash-lite:generateContent",
-        "payloadType": "str",
-        "x": 580,
-        "y": 160,
-        "wires": [
-            [
-                "16f554af71a2fa84"
-            ]
-        ]
-    },
-    {
-        "id": "16f554af71a2fa84",
-        "type": "function",
-        "z": "sa_tab",
-        "g": "df9c280d228d6828",
-        "name": "Set Model",
-        "func": "flow.set(\"gemini_model_url\", msg.payload);",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 760,
-        "y": 160,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "26ec7867a83653bf",
@@ -1248,10 +883,10 @@
         "g": "1558298feb7ccfbe",
         "name": "Soil Moisture",
         "group": "17af2483ca06839b",
-        "order": 4,
+        "order": 3,
         "value": "payload",
         "valueType": "msg",
-        "width": 2,
+        "width": 4,
         "height": 3,
         "gtype": "gauge-half",
         "gstyle": "needle",
@@ -1347,10 +982,10 @@
         "type": "ui-chart",
         "z": "sa_tab",
         "g": "c70a3beadd96d549",
-        "group": "17af2483ca06839b",
+        "group": "02b8af795e4e1738",
         "name": "Temp",
         "label": "Temperature Chart",
-        "order": 9007199254740991,
+        "order": 1,
         "chartType": "line",
         "category": "Nhiệt độ",
         "categoryType": "str",
@@ -1395,8 +1030,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "width": "4",
+        "height": "6",
         "className": "",
         "interpolation": "linear",
         "x": 1810,
@@ -1410,10 +1045,10 @@
         "type": "ui-chart",
         "z": "sa_tab",
         "g": "c70a3beadd96d549",
-        "group": "17af2483ca06839b",
+        "group": "02b8af795e4e1738",
         "name": "Hum",
         "label": "Humidity Chart",
-        "order": 9007199254740991,
+        "order": 2,
         "chartType": "line",
         "category": "Độ ẩm không khí",
         "categoryType": "str",
@@ -1458,8 +1093,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "width": "4",
+        "height": "6",
         "className": "",
         "interpolation": "linear",
         "x": 1810,
@@ -1473,10 +1108,10 @@
         "type": "ui-chart",
         "z": "sa_tab",
         "g": "c70a3beadd96d549",
-        "group": "17af2483ca06839b",
+        "group": "02b8af795e4e1738",
         "name": "Soil Moisture",
         "label": "Soil Moisture Chart",
-        "order": 9007199254740991,
+        "order": 3,
         "chartType": "line",
         "category": "Độ ẩm đất",
         "categoryType": "str",
@@ -1521,8 +1156,8 @@
             "#e5e5e5"
         ],
         "gridColorDefault": true,
-        "width": 6,
-        "height": 8,
+        "width": "4",
+        "height": "6",
         "className": "",
         "interpolation": "linear",
         "x": 1830,
@@ -1715,5 +1350,55 @@
                 "85fc9f348892d8d2"
             ]
         ]
+    },
+    {
+        "id": "fbc266363e8f5f14",
+        "type": "ui-spacer",
+        "group": "7f3df657b3c135ff",
+        "name": "spacer",
+        "order": 1,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc271fe751ae45c",
+        "type": "ui-spacer",
+        "group": "7f3df657b3c135ff",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc2814f7af5fda7",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 1,
+        "width": 1,
+        "height": 3,
+        "className": ""
+    },
+    {
+        "id": "fbc287594cc97fd6",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 2,
+        "width": 4,
+        "height": 1,
+        "className": ""
+    },
+    {
+        "id": "fbc2851c6c23514b",
+        "type": "ui-spacer",
+        "group": "247461c6e194fa85",
+        "name": "spacer",
+        "order": 3,
+        "width": 1,
+        "height": 3,
+        "className": ""
     }
 ]

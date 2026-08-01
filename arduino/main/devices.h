@@ -2,11 +2,11 @@
 #include "lib.h"
 
 /* PIN SETUP */
-const int DHT = 23;
-const int SMS = 34;
+const int DHT = 13;
+const int SMS = 33;
 const int LED = 18;
 const int BUTTON = 5;
-const int RELAY = 25;
+const int RELAY = 16;
 
 /* ESP32 alr declared
 const int SDA = 21;

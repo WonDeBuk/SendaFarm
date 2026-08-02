@@ -1,6 +1,6 @@
 [
     {
-        "id": "sa_tab",
+        "id": "3a01f48f8e34d1a3",
         "type": "tab",
         "label": "Senda Farm",
         "disabled": false,
@@ -8,9 +8,9 @@
         "env": []
     },
     {
-        "id": "448ff0f70ea48307",
+        "id": "b98db30d149decac",
         "type": "group",
-        "z": "sa_tab",
+        "z": "3a01f48f8e34d1a3",
         "name": "",
         "style": {
             "fill": "#dbcbe7",
@@ -18,21 +18,21 @@
             "label": false
         },
         "nodes": [
-            "b2ce390193ad82fb",
-            "f0334e9e5cdda136",
-            "f11b914e190b75b0",
-            "b0f79f49e1eee0de",
-            "26ec7867a83653bf"
+            "2d54ae6993800494",
+            "1c8fe5094e128cf5",
+            "82a464bfd688e003",
+            "f484953edea30276",
+            "fb72c4fda6c26e0e"
         ],
         "x": 94,
         "y": 79,
-        "w": 332,
+        "w": 312,
         "h": 202
     },
     {
-        "id": "1558298feb7ccfbe",
+        "id": "989b44a579fd691a",
         "type": "group",
-        "z": "sa_tab",
+        "z": "3a01f48f8e34d1a3",
         "name": "DHT Block",
         "style": {
             "fill": "#ffff00",
@@ -40,26 +40,26 @@
             "fill-opacity": "0.2"
         },
         "nodes": [
-            "0d07dbc9973e4c4a",
-            "512131535b8a6e38",
-            "dcc7cabcd06e2fa4",
-            "69c7b1efcd518915",
-            "5d307a8588cefc35",
-            "53d0c06bc3a8bb39",
-            "5e9942b924a44548",
-            "935ae511520baacc",
-            "ef072d0a7bc7657d",
-            "7c35b25689097af7"
+            "41c0d4565be052ec",
+            "df4d7bd3fc43e466",
+            "31a56119940b6e12",
+            "b6460d0889087c45",
+            "696d2b3423c91af9",
+            "16bf8d515919f89e",
+            "8c017b6ce712a20a",
+            "5d39bdc0779d4809",
+            "1278e6bd5aa693bb",
+            "92db7c9c858820f0"
         ],
         "x": 94,
-        "y": 519,
-        "w": 392,
-        "h": 342
+        "y": 299,
+        "w": 372,
+        "h": 402
     },
     {
-        "id": "398014290f26b1a5",
+        "id": "a85760695c9fa015",
         "type": "group",
-        "z": "sa_tab",
+        "z": "3a01f48f8e34d1a3",
         "name": "",
         "style": {
             "fill": "#7f8faf",
@@ -67,23 +67,23 @@
             "label": true
         },
         "nodes": [
-            "295ce3317978656e",
-            "001c4777751f7f97",
-            "fb86f3bf3b2452ee",
-            "b91783a89b883f7d",
-            "3f400484e5020241",
-            "bbae7301ed226ead",
-            "a236a18eba7f5f9e"
+            "1d72e583154285b8",
+            "ad8a73445954f6a9",
+            "da74c28204bf9593",
+            "3f7a8329dde22d8c",
+            "36057907ba361e08",
+            "e6e499ad7601d23b",
+            "a38b8626baf6b3c6"
         ],
-        "x": 94,
-        "y": 299,
+        "x": 434,
+        "y": 79,
         "w": 572,
         "h": 202
     },
     {
-        "id": "c70a3beadd96d549",
+        "id": "db6afe53fc2abd4f",
         "type": "group",
-        "z": "sa_tab",
+        "z": "3a01f48f8e34d1a3",
         "name": "",
         "style": {
             "fill": "#dbcbe7",
@@ -92,265 +92,28 @@
             "fill-opacity": "0.5"
         },
         "nodes": [
-            "d704aedf8b1f64c8",
-            "b2c75727ed70914b",
-            "85fc9f348892d8d2",
-            "f0ea2dfd18d40cc1",
-            "99e3df4db5fbbc09",
-            "92fb6e536be940af",
-            "ca97214bf8c94dbf",
-            "309c531fb7b2215f",
-            "0476865ce71b1b11",
-            "faada6b133075b91",
-            "9316dc4e81399882",
-            "8b2dbb3df166edf2"
+            "a652827f862213cc",
+            "597c62bd6eab4356",
+            "a3d8d55a9cff0870",
+            "e7d627abc20dffff",
+            "54f9b07852a1dd0b",
+            "3817d27c8734b851",
+            "dcccaaf93ce8bbd6",
+            "91caa85feea0b28c",
+            "a16ab2bfb8e54fbd",
+            "0c3efeb0aa9f74c8",
+            "fd713e0c25869ba7"
         ],
-        "x": 514,
-        "y": 519,
-        "w": 972,
+        "x": 94,
+        "y": 759,
+        "w": 1012,
         "h": 202
     },
     {
-        "id": "6d5a392f976844f3",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": true,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "a10a508b7852b0ba",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "none",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
-        "id": "8f9f922bf37199ce",
-        "type": "ui-theme",
-        "name": "Light",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "67ec2c2e363bbdbd",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "@flowfuse/node-red-dashboard": "1.30.2",
-            "node-red-node-email": "5.2.4"
-        }
-    },
-    {
-        "id": "6eaf401a93ae6f4e",
-        "type": "mqtt-broker",
-        "name": "HiveMQBroker",
-        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
-        "port": "8883",
-        "tls": "6d5a392f976844f3",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": 4,
-        "keepalive": "15",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "227ad96d7188d768",
-        "type": "ui-page",
-        "name": "Senda Farm",
-        "ui": "a10a508b7852b0ba",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "8f9f922bf37199ce",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": true,
-        "disabled": false
-    },
-    {
-        "id": "17af2483ca06839b",
-        "type": "ui-group",
-        "name": "Monitors",
-        "page": "227ad96d7188d768",
-        "width": 12,
-        "height": "3",
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "7f3df657b3c135ff",
-        "type": "ui-group",
-        "name": "Output",
-        "page": "227ad96d7188d768",
-        "width": 6,
-        "height": "3",
-        "order": 3,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "02b8af795e4e1738",
-        "type": "ui-group",
-        "name": "Chart",
-        "page": "227ad96d7188d768",
-        "width": "12",
-        "height": "6",
-        "order": 2,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "247461c6e194fa85",
-        "type": "ui-group",
-        "name": "Email",
-        "page": "227ad96d7188d768",
-        "width": 6,
-        "height": 1,
-        "order": 4,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "fbc266363e8f5f14",
-        "type": "ui-spacer",
-        "group": "7f3df657b3c135ff",
-        "name": "spacer",
-        "order": 1,
-        "width": 1,
-        "height": 3,
-        "className": ""
-    },
-    {
-        "id": "fbc271fe751ae45c",
-        "type": "ui-spacer",
-        "group": "7f3df657b3c135ff",
-        "name": "spacer",
-        "order": 3,
-        "width": 1,
-        "height": 3,
-        "className": ""
-    },
-    {
-        "id": "fbc2814f7af5fda7",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 1,
-        "width": 1,
-        "height": 3,
-        "className": ""
-    },
-    {
-        "id": "fbc287594cc97fd6",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 2,
-        "width": 4,
-        "height": 1,
-        "className": ""
-    },
-    {
-        "id": "fbc2851c6c23514b",
-        "type": "ui-spacer",
-        "group": "247461c6e194fa85",
-        "name": "spacer",
-        "order": 3,
-        "width": 1,
-        "height": 3,
-        "className": ""
-    },
-    {
-        "id": "0d07dbc9973e4c4a",
+        "id": "41c0d4565be052ec",
         "type": "ui-gauge",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Temp",
         "group": "17af2483ca06839b",
         "order": 1,
@@ -401,17 +164,17 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 370,
-        "y": 620,
+        "x": 350,
+        "y": 400,
         "wires": [
             []
         ]
     },
     {
-        "id": "512131535b8a6e38",
+        "id": "df4d7bd3fc43e466",
         "type": "mqtt in",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "DHT Temp",
         "topic": "senda-farm/dht/temperature",
         "qos": "2",
@@ -422,19 +185,19 @@
         "rh": 0,
         "inputs": 0,
         "x": 180,
-        "y": 620,
+        "y": 400,
         "wires": [
             [
-                "0d07dbc9973e4c4a",
-                "935ae511520baacc"
+                "41c0d4565be052ec",
+                "5d39bdc0779d4809"
             ]
         ]
     },
     {
-        "id": "b2ce390193ad82fb",
+        "id": "2d54ae6993800494",
         "type": "mqtt out",
-        "z": "sa_tab",
-        "g": "448ff0f70ea48307",
+        "z": "3a01f48f8e34d1a3",
+        "g": "b98db30d149decac",
         "name": "LED",
         "topic": "senda-farm/output/led",
         "qos": "2",
@@ -445,15 +208,15 @@
         "correl": "",
         "expiry": "",
         "broker": "6eaf401a93ae6f4e",
-        "x": 350,
+        "x": 330,
         "y": 180,
         "wires": []
     },
     {
-        "id": "dcc7cabcd06e2fa4",
+        "id": "31a56119940b6e12",
         "type": "ui-gauge",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Hum",
         "group": "17af2483ca06839b",
         "order": 2,
@@ -498,17 +261,17 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 370,
-        "y": 700,
+        "x": 350,
+        "y": 560,
         "wires": [
             []
         ]
     },
     {
-        "id": "f0334e9e5cdda136",
+        "id": "1c8fe5094e128cf5",
         "type": "ui-switch",
-        "z": "sa_tab",
-        "g": "448ff0f70ea48307",
+        "z": "3a01f48f8e34d1a3",
+        "g": "b98db30d149decac",
         "name": "Switch",
         "label": "LED",
         "group": "7f3df657b3c135ff",
@@ -535,15 +298,15 @@
         "y": 180,
         "wires": [
             [
-                "b2ce390193ad82fb"
+                "2d54ae6993800494"
             ]
         ]
     },
     {
-        "id": "69c7b1efcd518915",
+        "id": "b6460d0889087c45",
         "type": "mqtt in",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "DHT Hum",
         "topic": "senda-farm/dht/humidity",
         "qos": "2",
@@ -554,19 +317,19 @@
         "rh": 0,
         "inputs": 0,
         "x": 180,
-        "y": 700,
+        "y": 540,
         "wires": [
             [
-                "dcc7cabcd06e2fa4",
-                "ef072d0a7bc7657d"
+                "31a56119940b6e12",
+                "1278e6bd5aa693bb"
             ]
         ]
     },
     {
-        "id": "295ce3317978656e",
+        "id": "1d72e583154285b8",
         "type": "e-mail",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "server": "smtp.gmail.com",
         "port": "465",
         "authtype": "BASIC",
@@ -576,15 +339,15 @@
         "tls": true,
         "name": "",
         "dname": "Send Email",
-        "x": 570,
-        "y": 460,
+        "x": 910,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "001c4777751f7f97",
+        "id": "ad8a73445954f6a9",
         "type": "function",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "name": "Craft Email",
         "func": "const temp = flow.get(\"dht_temp\");\nconst hum = flow.get(\"dht_hum\");\nconst sm = flow.get(\"soil_moisture\");\nconst email = flow.get(\"email\");\n\nif (!email || email.toString().trim() === \"\" || (!temp && !hum && !sm)) return null;\nelse msg.to = email;\n\nif (temp < 40 && hum < 80) return null;\n\nif (sm > 30) {\n    msg.topic = \"⚠️ Cảnh báo độ ẩm đất\";\n    msg.payload = \"Độ ẩm đất cao: \" + sm + \"%\";\n}\n\n\nif (temp > 30) {\n    msg.topic = \"⚠️ Cảnh báo nhiệt độ\";\n    msg.payload = \"Nhiệt độ cao: \" + temp + \"°C\";\n}\n\nif (hum > 80) {\n    msg.topic = \"💧 Cảnh báo độ ẩm\";\n    msg.payload = \"Độ ẩm cao: \" + hum + \"%\";\n}\n\nreturn msg;",
         "outputs": 1,
@@ -593,19 +356,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
-        "y": 460,
+        "x": 730,
+        "y": 240,
         "wires": [
             [
-                "295ce3317978656e"
+                "1d72e583154285b8"
             ]
         ]
     },
     {
-        "id": "fb86f3bf3b2452ee",
+        "id": "da74c28204bf9593",
         "type": "function",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "name": "Set Email",
         "func": "flow.set(\"email\", msg.payload);",
         "outputs": 1,
@@ -614,18 +377,18 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 540,
-        "y": 400,
+        "x": 900,
+        "y": 180,
         "wires": [
             []
         ]
     },
     {
-        "id": "b91783a89b883f7d",
+        "id": "3f7a8329dde22d8c",
         "type": "ui-text-input",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
-        "group": "247461c6e194fa85",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
+        "group": "ad12e731bb7b04c6",
         "name": "User Email",
         "label": "Email",
         "order": 4,
@@ -646,19 +409,19 @@
         "icon": "",
         "iconPosition": "left",
         "iconInnerPosition": "inside",
-        "x": 190,
-        "y": 400,
+        "x": 530,
+        "y": 180,
         "wires": [
             [
-                "a236a18eba7f5f9e"
+                "a38b8626baf6b3c6"
             ]
         ]
     },
     {
-        "id": "f11b914e190b75b0",
+        "id": "82a464bfd688e003",
         "type": "ui-dropdown",
-        "z": "sa_tab",
-        "g": "448ff0f70ea48307",
+        "z": "3a01f48f8e34d1a3",
+        "g": "b98db30d149decac",
         "group": "7f3df657b3c135ff",
         "name": "Options",
         "label": "LCD Display:",
@@ -692,15 +455,15 @@
         "y": 240,
         "wires": [
             [
-                "b0f79f49e1eee0de"
+                "f484953edea30276"
             ]
         ]
     },
     {
-        "id": "b0f79f49e1eee0de",
+        "id": "f484953edea30276",
         "type": "mqtt out",
-        "z": "sa_tab",
-        "g": "448ff0f70ea48307",
+        "z": "3a01f48f8e34d1a3",
+        "g": "b98db30d149decac",
         "name": "LCD",
         "topic": "senda-farm/output/lcd",
         "qos": "2",
@@ -711,15 +474,15 @@
         "correl": "",
         "expiry": "",
         "broker": "6eaf401a93ae6f4e",
-        "x": 350,
+        "x": 330,
         "y": 240,
         "wires": []
     },
     {
-        "id": "3f400484e5020241",
+        "id": "36057907ba361e08",
         "type": "inject",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "name": "30s Timer",
         "props": [],
         "repeat": "30",
@@ -727,30 +490,30 @@
         "once": true,
         "onceDelay": "30",
         "topic": "",
-        "x": 210,
-        "y": 460,
+        "x": 550,
+        "y": 240,
         "wires": [
             [
-                "001c4777751f7f97"
+                "ad8a73445954f6a9"
             ]
         ]
     },
     {
-        "id": "5d307a8588cefc35",
+        "id": "696d2b3423c91af9",
         "type": "comment",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Sensors",
         "info": "Thong tin duoc gui toi tu ESP moi 2s duoc luu vao Flow\n\nTemp -> dht_temp\n\nHum -> dht_hum\n\nSM -> soil_moisture\n\nCach goi: flow.get(\"dht_temp\")",
         "x": 180,
-        "y": 560,
+        "y": 340,
         "wires": []
     },
     {
-        "id": "26ec7867a83653bf",
+        "id": "fb72c4fda6c26e0e",
         "type": "comment",
-        "z": "sa_tab",
-        "g": "448ff0f70ea48307",
+        "z": "3a01f48f8e34d1a3",
+        "g": "b98db30d149decac",
         "name": "OUTPUT",
         "info": "Switch -> Boolean\n\nOptions -> DHT hoac CSMS. Dung de hien thi tuy che do cua LCD",
         "x": 180,
@@ -758,21 +521,21 @@
         "wires": []
     },
     {
-        "id": "bbae7301ed226ead",
+        "id": "e6e499ad7601d23b",
         "type": "comment",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "name": "EMAIL",
         "info": "Double click Send Email node\n\ntrunghuyh2@gmail.com\nxoad skvx fjip yjth\n",
-        "x": 170,
-        "y": 340,
+        "x": 510,
+        "y": 120,
         "wires": []
     },
     {
-        "id": "a236a18eba7f5f9e",
+        "id": "a38b8626baf6b3c6",
         "type": "delay",
-        "z": "sa_tab",
-        "g": "398014290f26b1a5",
+        "z": "3a01f48f8e34d1a3",
+        "g": "a85760695c9fa015",
         "name": "1 msg / 15s",
         "pauseType": "rate",
         "timeout": "10",
@@ -786,19 +549,19 @@
         "drop": true,
         "allowrate": false,
         "outputs": 1,
-        "x": 370,
-        "y": 400,
+        "x": 730,
+        "y": 180,
         "wires": [
             [
-                "fb86f3bf3b2452ee"
+                "da74c28204bf9593"
             ]
         ]
     },
     {
-        "id": "53d0c06bc3a8bb39",
+        "id": "16bf8d515919f89e",
         "type": "mqtt in",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Soil Moisture",
         "topic": "senda-farm/dht/soil_moisture",
         "qos": "2",
@@ -809,19 +572,19 @@
         "rh": 0,
         "inputs": 0,
         "x": 190,
-        "y": 780,
+        "y": 660,
         "wires": [
             [
-                "5e9942b924a44548",
-                "7c35b25689097af7"
+                "8c017b6ce712a20a",
+                "92db7c9c858820f0"
             ]
         ]
     },
     {
-        "id": "5e9942b924a44548",
+        "id": "8c017b6ce712a20a",
         "type": "ui-gauge",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Soil Moisture",
         "group": "17af2483ca06839b",
         "order": 3,
@@ -866,19 +629,19 @@
         "styleRounded": true,
         "styleGlow": false,
         "className": "",
-        "x": 390,
-        "y": 780,
+        "x": 370,
+        "y": 660,
         "wires": [
             []
         ]
     },
     {
-        "id": "d704aedf8b1f64c8",
+        "id": "a652827f862213cc",
         "type": "ui-chart",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
-        "group": "02b8af795e4e1738",
-        "name": "Temp",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
+        "group": "1db75c2a1d5fdc53",
+        "name": "Temperature Chart",
         "label": "Temperature Chart",
         "order": 1,
         "chartType": "line",
@@ -929,19 +692,19 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1370,
-        "y": 560,
+        "x": 990,
+        "y": 800,
         "wires": [
             []
         ]
     },
     {
-        "id": "b2c75727ed70914b",
+        "id": "597c62bd6eab4356",
         "type": "ui-chart",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
-        "group": "02b8af795e4e1738",
-        "name": "Hum",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
+        "group": "1db75c2a1d5fdc53",
+        "name": "Humidity Chart",
         "label": "Humidity Chart",
         "order": 2,
         "chartType": "line",
@@ -992,19 +755,19 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1370,
-        "y": 620,
+        "x": 980,
+        "y": 860,
         "wires": [
             []
         ]
     },
     {
-        "id": "85fc9f348892d8d2",
+        "id": "a3d8d55a9cff0870",
         "type": "ui-chart",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
-        "group": "02b8af795e4e1738",
-        "name": "Soil Moisture",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
+        "group": "1db75c2a1d5fdc53",
+        "name": "Soil Moisture Chart",
         "label": "Soil Moisture Chart",
         "order": 3,
         "chartType": "line",
@@ -1055,17 +818,17 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 1390,
-        "y": 680,
+        "x": 990,
+        "y": 920,
         "wires": [
             []
         ]
     },
     {
-        "id": "f0ea2dfd18d40cc1",
+        "id": "e7d627abc20dffff",
         "type": "http request",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Store Request",
         "method": "POST",
         "ret": "obj",
@@ -1078,19 +841,19 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1000,
-        "y": 680,
+        "x": 480,
+        "y": 800,
         "wires": [
             [
-                "faada6b133075b91"
+                "0c3efeb0aa9f74c8"
             ]
         ]
     },
     {
-        "id": "99e3df4db5fbbc09",
+        "id": "54f9b07852a1dd0b",
         "type": "function",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Store Trigger",
         "func": "msg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data\"\nmsg.payload = {\n    temp: flow.get(\"dht_temp\"),\n    hum: flow.get(\"dht_hum\"),\n    sm: flow.get(\"soil_moisture\")\n};\n\n\n// Cấu hình các Headers bắt buộc của Supabase\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Content-Type\": \"application/json\",\n    \"Prefer\": \"return=representation\" // Yêu cầu trả về data sau khi insert thành công (tùy chọn)\n};\n\nreturn msg;",
         "outputs": 1,
@@ -1099,36 +862,36 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 680,
+        "x": 190,
+        "y": 800,
         "wires": [
             [
-                "f0ea2dfd18d40cc1"
+                "e7d627abc20dffff"
             ]
         ]
     },
     {
-        "id": "92fb6e536be940af",
+        "id": "3817d27c8734b851",
         "type": "ui-control",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Mount Trigger",
         "ui": "a10a508b7852b0ba",
         "events": "connect",
-        "x": 640,
-        "y": 560,
+        "x": 200,
+        "y": 920,
         "wires": [
             [
-                "ca97214bf8c94dbf",
-                "9316dc4e81399882"
+                "dcccaaf93ce8bbd6",
+                "fd713e0c25869ba7"
             ]
         ]
     },
     {
-        "id": "ca97214bf8c94dbf",
+        "id": "dcccaaf93ce8bbd6",
         "type": "function",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "1 Hour Query",
         "func": "// 1. Tính mốc thời gian cách đây 1 tiếng (chuẩn ISO)\nlet oneHourAgo = new Date(Date.now() - 3600000).toISOString();\n\n// 2. Tạo URL lấy dữ liệu bảng Data\n// Lưu ý: Dùng order=created_at.asc để dữ liệu sắp xếp từ cũ tới mới, \n// giúp biểu đồ vẽ đúng chiều từ trái qua phải.\nmsg.url = \"https://cuvnngyogjbudkvivnlo.supabase.co/rest/v1/Data?select=*&created_at=gte.\" + oneHourAgo + \"&order=created_at.asc\";\n\n// 3. Cấu hình Headers (Thay API Key của bạn vào)\nmsg.headers = {\n    \"apikey\": \"sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\",\n    \"Authorization\": \"Bearer sb_secret_twz3ZtLu_2lJffNqC_Cvcw_yKACowqr\"\n};\n\n// 4. Xóa payload rác sinh ra từ node ui control để tránh gây lỗi HTTP Request\nmsg.payload = {};\n\nreturn msg;",
         "outputs": 1,
@@ -1137,19 +900,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 820,
-        "y": 560,
+        "x": 400,
+        "y": 920,
         "wires": [
             [
-                "309c531fb7b2215f"
+                "91caa85feea0b28c"
             ]
         ]
     },
     {
-        "id": "309c531fb7b2215f",
+        "id": "91caa85feea0b28c",
         "type": "http request",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "",
         "method": "GET",
         "ret": "obj",
@@ -1162,19 +925,19 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 1010,
-        "y": 560,
+        "x": 590,
+        "y": 920,
         "wires": [
             [
-                "0476865ce71b1b11"
+                "a16ab2bfb8e54fbd"
             ]
         ]
     },
     {
-        "id": "0476865ce71b1b11",
+        "id": "a16ab2bfb8e54fbd",
         "type": "split",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Spliter",
         "splt": "\\n",
         "spltType": "str",
@@ -1183,21 +946,21 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 1170,
-        "y": 560,
+        "x": 750,
+        "y": 920,
         "wires": [
             [
-                "d704aedf8b1f64c8",
-                "b2c75727ed70914b",
-                "85fc9f348892d8d2"
+                "a652827f862213cc",
+                "597c62bd6eab4356",
+                "a3d8d55a9cff0870"
             ]
         ]
     },
     {
-        "id": "faada6b133075b91",
+        "id": "0c3efeb0aa9f74c8",
         "type": "function",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Sparser",
         "func": "msg.payload = msg.payload[0];\n\nreturn msg;",
         "outputs": 1,
@@ -1206,21 +969,21 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1160,
-        "y": 680,
+        "x": 740,
+        "y": 800,
         "wires": [
             [
-                "d704aedf8b1f64c8",
-                "b2c75727ed70914b",
-                "85fc9f348892d8d2"
+                "a652827f862213cc",
+                "597c62bd6eab4356",
+                "a3d8d55a9cff0870"
             ]
         ]
     },
     {
-        "id": "9316dc4e81399882",
+        "id": "fd713e0c25869ba7",
         "type": "change",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
+        "z": "3a01f48f8e34d1a3",
+        "g": "db6afe53fc2abd4f",
         "name": "Clear",
         "rules": [
             {
@@ -1236,41 +999,21 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 1110,
-        "y": 620,
+        "x": 650,
+        "y": 860,
         "wires": [
             [
-                "d704aedf8b1f64c8",
-                "b2c75727ed70914b",
-                "85fc9f348892d8d2"
+                "a652827f862213cc",
+                "597c62bd6eab4356",
+                "a3d8d55a9cff0870"
             ]
         ]
     },
     {
-        "id": "8b2dbb3df166edf2",
-        "type": "inject",
-        "z": "sa_tab",
-        "g": "c70a3beadd96d549",
-        "name": "5s Timer",
-        "props": [],
-        "repeat": "5",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "x": 620,
-        "y": 680,
-        "wires": [
-            [
-                "99e3df4db5fbbc09"
-            ]
-        ]
-    },
-    {
-        "id": "935ae511520baacc",
+        "id": "5d39bdc0779d4809",
         "type": "function",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Set Temp",
         "func": "flow.set(\"dht_temp\", msg.payload ?? 0);\nreturn msg;",
         "outputs": 1,
@@ -1279,17 +1022,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 660,
+        "x": 360,
+        "y": 440,
         "wires": [
-            []
+            [
+                "13aa7a92c5edd21f"
+            ]
         ]
     },
     {
-        "id": "ef072d0a7bc7657d",
+        "id": "1278e6bd5aa693bb",
         "type": "function",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Set Hum",
         "func": "flow.set(\"dht_hum\", msg.payload ?? 0);\nreturn msg;",
         "outputs": 1,
@@ -1298,17 +1043,19 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 740,
+        "x": 360,
+        "y": 520,
         "wires": [
-            []
+            [
+                "13aa7a92c5edd21f"
+            ]
         ]
     },
     {
-        "id": "7c35b25689097af7",
+        "id": "92db7c9c858820f0",
         "type": "function",
-        "z": "sa_tab",
-        "g": "1558298feb7ccfbe",
+        "z": "3a01f48f8e34d1a3",
+        "g": "989b44a579fd691a",
         "name": "Set SM",
         "func": "flow.set(\"soil_moisture\", msg.payload ?? 0);\nreturn msg;",
         "outputs": 1,
@@ -1317,10 +1064,257 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 380,
-        "y": 820,
+        "x": 360,
+        "y": 620,
         "wires": [
-            []
+            [
+                "13aa7a92c5edd21f"
+            ]
         ]
+    },
+    {
+        "id": "0c9f59d75daf010d",
+        "type": "change",
+        "z": "3a01f48f8e34d1a3",
+        "name": "Empty msg",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            },
+            {
+                "t": "delete",
+                "p": "topic",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 700,
+        "wires": [
+            [
+                "54f9b07852a1dd0b"
+            ]
+        ]
+    },
+    {
+        "id": "13aa7a92c5edd21f",
+        "type": "join",
+        "z": "3a01f48f8e34d1a3",
+        "name": "Signal ",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "3",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 600,
+        "y": 520,
+        "wires": [
+            [
+                "0c9f59d75daf010d"
+            ]
+        ]
+    },
+    {
+        "id": "17af2483ca06839b",
+        "type": "ui-group",
+        "name": "Monitors",
+        "page": "227ad96d7188d768",
+        "width": 12,
+        "height": "3",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "6eaf401a93ae6f4e",
+        "type": "mqtt-broker",
+        "name": "HiveMQBroker",
+        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "6d5a392f976844f3",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": "15",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7f3df657b3c135ff",
+        "type": "ui-group",
+        "name": "Control Panel",
+        "page": "227ad96d7188d768",
+        "width": 6,
+        "height": "3",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ad12e731bb7b04c6",
+        "type": "ui-group",
+        "name": "Email",
+        "page": "227ad96d7188d768",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1db75c2a1d5fdc53",
+        "type": "ui-group",
+        "name": "Charts",
+        "page": "227ad96d7188d768",
+        "width": "12",
+        "height": "6",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "a10a508b7852b0ba",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "227ad96d7188d768",
+        "type": "ui-page",
+        "name": "Senda Farm",
+        "ui": "a10a508b7852b0ba",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "8f9f922bf37199ce",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "6d5a392f976844f3",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "8f9f922bf37199ce",
+        "type": "ui-theme",
+        "name": "Light",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "bf50987651d647c8",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-node-email": "5.2.4"
+        }
     }
 ]

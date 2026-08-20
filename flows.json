@@ -104,10 +104,196 @@
             "0c3efeb0aa9f74c8",
             "fd713e0c25869ba7"
         ],
-        "x": 94,
-        "y": 759,
+        "x": 714,
+        "y": 479,
         "w": 1012,
         "h": 202
+    },
+    {
+        "id": "a10a508b7852b0ba",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "6d5a392f976844f3",
+        "type": "tls-config",
+        "name": "",
+        "cert": "",
+        "key": "",
+        "ca": "",
+        "certname": "",
+        "keyname": "",
+        "caname": "",
+        "servername": "",
+        "verifyservercert": true,
+        "alpnprotocol": ""
+    },
+    {
+        "id": "8f9f922bf37199ce",
+        "type": "ui-theme",
+        "name": "Light",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "bf50987651d647c8",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.30.2",
+            "node-red-node-email": "5.2.4"
+        }
+    },
+    {
+        "id": "6eaf401a93ae6f4e",
+        "type": "mqtt-broker",
+        "name": "HiveMQBroker",
+        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
+        "port": "8883",
+        "tls": "6d5a392f976844f3",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": true,
+        "protocolVersion": 4,
+        "keepalive": "15",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "227ad96d7188d768",
+        "type": "ui-page",
+        "name": "Senda Farm",
+        "ui": "a10a508b7852b0ba",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "8f9f922bf37199ce",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "17af2483ca06839b",
+        "type": "ui-group",
+        "name": "Monitors",
+        "page": "227ad96d7188d768",
+        "width": 12,
+        "height": "3",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "7f3df657b3c135ff",
+        "type": "ui-group",
+        "name": "Control Panel",
+        "page": "227ad96d7188d768",
+        "width": 6,
+        "height": "3",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "ad12e731bb7b04c6",
+        "type": "ui-group",
+        "name": "Email",
+        "page": "227ad96d7188d768",
+        "width": 6,
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1db75c2a1d5fdc53",
+        "type": "ui-group",
+        "name": "Charts",
+        "page": "227ad96d7188d768",
+        "width": "12",
+        "height": "6",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
     },
     {
         "id": "41c0d4565be052ec",
@@ -692,8 +878,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 990,
-        "y": 800,
+        "x": 1610,
+        "y": 520,
         "wires": [
             []
         ]
@@ -755,8 +941,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 980,
-        "y": 860,
+        "x": 1600,
+        "y": 580,
         "wires": [
             []
         ]
@@ -818,8 +1004,8 @@
         "height": "6",
         "className": "",
         "interpolation": "linear",
-        "x": 990,
-        "y": 920,
+        "x": 1610,
+        "y": 640,
         "wires": [
             []
         ]
@@ -841,8 +1027,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 480,
-        "y": 800,
+        "x": 1100,
+        "y": 520,
         "wires": [
             [
                 "0c3efeb0aa9f74c8"
@@ -862,8 +1048,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 190,
-        "y": 800,
+        "x": 810,
+        "y": 520,
         "wires": [
             [
                 "e7d627abc20dffff"
@@ -878,8 +1064,8 @@
         "name": "Mount Trigger",
         "ui": "a10a508b7852b0ba",
         "events": "connect",
-        "x": 200,
-        "y": 920,
+        "x": 820,
+        "y": 640,
         "wires": [
             [
                 "dcccaaf93ce8bbd6",
@@ -900,8 +1086,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 400,
-        "y": 920,
+        "x": 1020,
+        "y": 640,
         "wires": [
             [
                 "91caa85feea0b28c"
@@ -925,8 +1111,8 @@
         "authType": "",
         "senderr": false,
         "headers": [],
-        "x": 590,
-        "y": 920,
+        "x": 1210,
+        "y": 640,
         "wires": [
             [
                 "a16ab2bfb8e54fbd"
@@ -946,8 +1132,8 @@
         "stream": false,
         "addname": "",
         "property": "payload",
-        "x": 750,
-        "y": 920,
+        "x": 1370,
+        "y": 640,
         "wires": [
             [
                 "a652827f862213cc",
@@ -969,8 +1155,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 740,
-        "y": 800,
+        "x": 1360,
+        "y": 520,
         "wires": [
             [
                 "a652827f862213cc",
@@ -999,8 +1185,8 @@
         "from": "",
         "to": "",
         "reg": false,
-        "x": 650,
-        "y": 860,
+        "x": 1270,
+        "y": 580,
         "wires": [
             [
                 "a652827f862213cc",
@@ -1073,36 +1259,6 @@
         ]
     },
     {
-        "id": "0c9f59d75daf010d",
-        "type": "change",
-        "z": "3a01f48f8e34d1a3",
-        "name": "Empty msg",
-        "rules": [
-            {
-                "t": "delete",
-                "p": "payload",
-                "pt": "msg"
-            },
-            {
-                "t": "delete",
-                "p": "topic",
-                "pt": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 750,
-        "y": 700,
-        "wires": [
-            [
-                "54f9b07852a1dd0b"
-            ]
-        ]
-    },
-    {
         "id": "13aa7a92c5edd21f",
         "type": "join",
         "z": "3a01f48f8e34d1a3",
@@ -1127,194 +1283,8 @@
         "y": 520,
         "wires": [
             [
-                "0c9f59d75daf010d"
+                "54f9b07852a1dd0b"
             ]
         ]
-    },
-    {
-        "id": "17af2483ca06839b",
-        "type": "ui-group",
-        "name": "Monitors",
-        "page": "227ad96d7188d768",
-        "width": 12,
-        "height": "3",
-        "order": 1,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "6eaf401a93ae6f4e",
-        "type": "mqtt-broker",
-        "name": "HiveMQBroker",
-        "broker": "a591126d24c94f1b923816f6c31b9baa.s1.eu.hivemq.cloud",
-        "port": "8883",
-        "tls": "6d5a392f976844f3",
-        "clientid": "",
-        "autoConnect": true,
-        "usetls": true,
-        "protocolVersion": 4,
-        "keepalive": "15",
-        "cleansession": true,
-        "autoUnsubscribe": true,
-        "birthTopic": "",
-        "birthQos": "0",
-        "birthRetain": "false",
-        "birthPayload": "",
-        "birthMsg": {},
-        "closeTopic": "",
-        "closeQos": "0",
-        "closeRetain": "false",
-        "closePayload": "",
-        "closeMsg": {},
-        "willTopic": "",
-        "willQos": "0",
-        "willRetain": "false",
-        "willPayload": "",
-        "willMsg": {},
-        "userProps": "",
-        "sessionExpiry": ""
-    },
-    {
-        "id": "7f3df657b3c135ff",
-        "type": "ui-group",
-        "name": "Control Panel",
-        "page": "227ad96d7188d768",
-        "width": 6,
-        "height": "3",
-        "order": 3,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "ad12e731bb7b04c6",
-        "type": "ui-group",
-        "name": "Email",
-        "page": "227ad96d7188d768",
-        "width": 6,
-        "height": 1,
-        "order": 4,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "1db75c2a1d5fdc53",
-        "type": "ui-group",
-        "name": "Charts",
-        "page": "227ad96d7188d768",
-        "width": "12",
-        "height": "6",
-        "order": 2,
-        "showTitle": true,
-        "className": "",
-        "visible": "true",
-        "disabled": "false",
-        "groupType": "default"
-    },
-    {
-        "id": "a10a508b7852b0ba",
-        "type": "ui-base",
-        "name": "My Dashboard",
-        "path": "/dashboard",
-        "appIcon": "",
-        "includeClientData": true,
-        "acceptsClientConfig": [
-            "ui-notification",
-            "ui-control"
-        ],
-        "showPathInSidebar": false,
-        "headerContent": "page",
-        "navigationStyle": "default",
-        "titleBarStyle": "default",
-        "showReconnectNotification": true,
-        "notificationDisplayTime": 1,
-        "showDisconnectNotification": true,
-        "allowInstall": false
-    },
-    {
-        "id": "227ad96d7188d768",
-        "type": "ui-page",
-        "name": "Senda Farm",
-        "ui": "a10a508b7852b0ba",
-        "path": "/page1",
-        "icon": "home",
-        "layout": "grid",
-        "theme": "8f9f922bf37199ce",
-        "breakpoints": [
-            {
-                "name": "Default",
-                "px": "0",
-                "cols": "3"
-            },
-            {
-                "name": "Tablet",
-                "px": "576",
-                "cols": "6"
-            },
-            {
-                "name": "Small Desktop",
-                "px": "768",
-                "cols": "9"
-            },
-            {
-                "name": "Desktop",
-                "px": "1024",
-                "cols": "12"
-            }
-        ],
-        "order": 1,
-        "className": "",
-        "visible": true,
-        "disabled": false
-    },
-    {
-        "id": "6d5a392f976844f3",
-        "type": "tls-config",
-        "name": "",
-        "cert": "",
-        "key": "",
-        "ca": "",
-        "certname": "",
-        "keyname": "",
-        "caname": "",
-        "servername": "",
-        "verifyservercert": true,
-        "alpnprotocol": ""
-    },
-    {
-        "id": "8f9f922bf37199ce",
-        "type": "ui-theme",
-        "name": "Light",
-        "colors": {
-            "surface": "#ffffff",
-            "primary": "#0094ce",
-            "bgPage": "#eeeeee",
-            "groupBg": "#ffffff",
-            "groupOutline": "#cccccc"
-        },
-        "sizes": {
-            "density": "default",
-            "pagePadding": "12px",
-            "groupGap": "12px",
-            "groupBorderRadius": "4px",
-            "widgetGap": "12px"
-        }
-    },
-    {
-        "id": "bf50987651d647c8",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "@flowfuse/node-red-dashboard": "1.30.2",
-            "node-red-node-email": "5.2.4"
-        }
     }
 ]

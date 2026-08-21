@@ -91,7 +91,6 @@ void setUpLCD() {
 
 void setUpPumpRelay() {
    pinMode(BUTTON, INPUT_PULLDOWN); // Normally LOW
-   digitalWrite(BUTTON, 1);
    pinMode(RELAY, OUTPUT);
 }
 
